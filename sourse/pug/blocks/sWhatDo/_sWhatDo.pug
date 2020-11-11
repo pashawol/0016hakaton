@@ -2,6 +2,28 @@ mixin sWhatDo(data)
 	// start sWhatDo
 	+b.sWhatDo.section#sWhatDo&attributes(attributes)
 		+marquee.text-1.d-none.d-sm-flex(direction="right")
-		.containe 
-			.row
+		.container
+			+e.item
+				+e.circle
+					img(src="img/svg/text-1.svg" loading="lazy", alt="")
+					img.icon(src="img/svg/icon-1.svg" loading="lazy", alt="")
+
+				+e.text 
+					span Найди единомышленников,  которые с&nbsp;тобой  на&nbsp;одной&nbsp;волне.
+			+e.item
+				+e.circle
+					img(src="img/svg/text-2.svg" loading="lazy", alt="")
+					//- img.icon(src="img/svg/icon-2.svg" loading="lazy", alt="")
+
+				+e.text 
+					span Распределите роли в команде и следуйте им, дополняя друг друга.
+			+e.item
+				+e.circle
+					img(src="img/svg/text-3.svg" loading="lazy", alt="")
+					img.icon(src="img/svg/icon-3.svg" loading="lazy", alt="")
+
+				+e.text 
+					span Тебе предстоит продумать стратегию и&nbsp;донести ее  до&nbsp;участников команды.  Сбор&nbsp;всех&nbsp;наработанных материалов и&nbsp;защита проекта!
+			+e.btn(href="#") Принять участие в хакатоне
+				i
 	// end sWhatDo

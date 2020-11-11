@@ -113,10 +113,10 @@ body {
 }
 
 .tdu {
-	text-decoration: underline;
+	border-bottom: 1px solid  ;
 
 	&:hover {
-		text-decoration: none;
+		border-color: transparent;
 	}
 }
 
@@ -423,9 +423,9 @@ marquee{
 	font-weight: bold;
 	i{
 		position: absolute;
-		left: 0;
+		left: -1px;
 		top: -1px;
-		width: 100%;
+		width: calc(100% + 2px);
 		height: calc(100% + 2px);
 		z-index: -1;
 		@include mt;

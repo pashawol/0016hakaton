@@ -2,8 +2,26 @@ mixin sForm()
 	// start sForm
 	+b.SECTION.sForm.section#sForm&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sForm
-				
+			+b.section-title
+				h2 Хочешь быть в&nbsp;курсе самых последних новостей Хакатона Идей? Подпишись на&nbsp;рассылку, узнавай актуальные события первым!
+			+form-wrap
+				.row
+					.col-lg-4
+						+input('ФИО')
+					.col-lg-4
+						+input('E-mail','email')(required)
+					.col-lg-4
+						button.btn.btn-outline-gradient.btn-block(type="submit") Отправить
+							i
 			.row
+				.col-lg-6
+					+e.block
+						.h4  Вы&nbsp;также можете стать партнером Хакатона Идей и&nbsp;внести свой вклад в&nbsp;создание реальных проектов для развития молодежи
+						+e.btn(href="#") Стать партнером
+							i
+				.col-lg-6
+					+e.block
+						.h4 Оставьте заявку на&nbsp;участие, чтобы мы&nbsp;прислали вам подробные правила и&nbsp;держали в&nbsp;курсе новостей
+						+e.btn(href="#") Принять участие в хакатоне
+							i
 	// end sForm

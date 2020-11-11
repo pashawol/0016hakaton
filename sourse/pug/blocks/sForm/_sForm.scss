@@ -1,6 +1,63 @@
 
 	// start .sForm
 	.sForm {
+		position: relative;
+		overflow: hidden;
+		border-top: 3px solid rgba($color: #000000, $alpha: .5);
+
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				// z-index: -1;
+				width: rem(350);
+				height: rem(350);
+				mix-blend-mode: normal;
+				filter: blur(60px);
+				// @include a-cent(y);
+				position: absolute;
+				border-radius: 50%;
+				pointer-events: none;
+			}
+
+			position: relative;
+
+			&::after {
+				right: -200px;
+				top: -150px;
+				background: conic-gradient(from 167.69deg at 50% 50%, #FC4646 0deg, #FFB800 360deg);
+				filter: blur(50px);
+				animation: blinkingText 3.2s infinite;
+			}
+		.form-wrap{
+			margin-bottom: 4rem;
+		}
+		&__block{
+			position: relative;
+			margin-bottom: 4rem;
+			&::before{
+				content: '';
+				background: linear-gradient(93.21deg, #FC9246 0%, #54C8ED 100%);
+				height: 8px;
+				display: block;
+				margin-bottom: rem(34);
+			}
+		}
+		&__btn{
+			@extend .btn;
+			@extend .btn-block;
+			@extend .btn-outline-gradient;
+			max-width: rem(442);
+		}
+				.h4{
+					margin-bottom: 1em;
+					letter-spacing: 0.015em;
+	
+					/* 2 */
+	
+					color: #5D6773;
+	
+				}
 		 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}

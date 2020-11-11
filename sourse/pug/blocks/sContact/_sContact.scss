@@ -1,6 +1,46 @@
 
 	// start .sContact
 	.sContact {
+		position: relative;
+		overflow: hidden;
+		z-index: 2; 
+		--sPT: 0;
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				// z-index: -1;
+				width: rem(350);
+				height: rem(350);
+				mix-blend-mode: normal;
+				filter: blur(60px);
+				// @include a-cent(y);
+				position: absolute;
+				border-radius: 50%;
+				pointer-events: none;
+				z-index: -1;
+			}
+
+			position: relative;
+
+			&::after {
+				bottom: -200px;
+				left: -150px;
+			 background: conic-gradient(from 167.69deg at 50% 50%, #54C8ED 0deg, #54C8ED 360deg);
+				filter: blur(50px);
+				animation: blinkingText 3.2s infinite;
+			}
+		a{
+			background:linear-gradient(93.21deg, #FC9246 0%, #54C8ED 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			@extend .h3;
+
+		}
+		.row{
+			justify-content: space-between;
+		}
+		
 		 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}

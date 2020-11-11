@@ -2,8 +2,16 @@ mixin sContact()
 	// start sContact
 	+b.SECTION.sContact.section#sContact&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sContact
-				
+			+b.section-title
+				h2 Контакты
 			.row
+				.col-lg-4.col-sm-auto
+					p Для  <br>			участников
+					a(href="mailto:mail@sample.com") mail@sample.com
+				.col-lg-4.col-sm-auto
+					p Телефон  <br> горячей линии
+					a(href="tel:8 800 668 99 88") 8 800 668 99 88
+				.col-lg-4.col-sm-auto
+					p Чат  <br> с поддержкой
+					a(href="#") Перейти в чат
 	// end sContact

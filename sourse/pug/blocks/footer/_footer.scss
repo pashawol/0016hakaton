@@ -1,6 +1,15 @@
 .footer {
-		
+		border-top: 3px solid rgba($color: #000000, $alpha: .5);
 	margin-top: auto;
+	padding: rem(38) 0;
+	font-weight: 500;
+	.row{
+		align-items: center;
+		> * {
+			padding-top: rem(10);
+			padding-bottom: rem(10);
+		}
+	}
 
 // 
 @include media-breakpoint-up(xl) {}
