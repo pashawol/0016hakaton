@@ -1,0 +1,17 @@
+mixin sPrizes(data)
+	// start sPrizes
+	+b.SECTION.sPrizes.section#sPrizes&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Призы:
+			.row
+				mixin item(t,p)
+					+e.col.col-md-6
+						+e.title= t
+						p= p
+				+item('I место','Оплаченная поездка  на Байкал, Териберку или Камчатку')
+				+item('II место','Курсы повышения квалификации в РАНХИГС или ВШЭ, Мастерской управления Сенеж')
+				+item('III место','Мерч от Хакатона Идей')
+				+item('IV место','Яндекс.Станция Алиса')
+				+item('V место','Стажировка команды победителей в рамках реализации их кейса и финансирование на реализацию идеи')
+	// end sPrizes

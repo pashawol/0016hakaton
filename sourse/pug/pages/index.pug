@@ -1,0 +1,39 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sBecome/_sBecome.pug
+include ../blocks/sThis/_sThis.pug
+include ../blocks/sFor/_sFor.pug
+include ../blocks/sWhat/_sWhat.pug
+include ../blocks/sCases/_sCases.pug
+include ../blocks/sRoadMap/_sRoadMap.pug
+include ../blocks/sPrizes/_sPrizes.pug
+include ../blocks/sWhatDo/_sWhatDo.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'title'
+	title= title
+block pagecontent
+ 
+	+top-nav() 
+	+headerBlock()
+	+sAbout
+	+sBecome
+	+sThis
+	+sFor
+	+sWhat
+	+sCases
+	+sRoadMap
+	+sPrizes
+	+sWhatDo
+	+sForm()
+	+sContact()
+	+footer()
+
+
+	

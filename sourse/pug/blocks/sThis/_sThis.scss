@@ -1,0 +1,127 @@
+
+	// start .sThis
+	.sThis {
+		position: relative;
+		z-index: 2;
+		
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				// z-index: -1;
+				width: rem(900px);
+				height: rem(900px);
+				mix-blend-mode: normal;
+				filter: blur(60px);
+				@include a-cent(y);
+				border-radius: 50%;
+				pointer-events: none;
+			}
+
+			position: relative;
+
+			&::after {
+				left: -800px;
+				top: 100px;
+				background: conic-gradient(from 167.69deg at 50% 50%, #FC4646 0deg, #FFB800 360deg);
+				filter: blur(50px);
+				animation: blinkingText 3.2s infinite;
+			}
+		.container{
+			@include media-breakpoint-up(xl) {
+				--sPT: #{rem(260)};
+				--sPB: #{rem(260)};
+			}
+
+			background-image: url(../img/svg/rows.svg);
+			background-repeat: repeat;
+			background-size: auto;
+			background-position: top center;
+		}
+		&__border{
+			@include media-breakpoint-up(lg) {
+
+				margin-left: auto;
+				margin-right: auto;
+				max-width: rem(510px);
+				padding: rem(50) rem(40);
+			}
+			padding: rem(50) rem(20);
+			background: #FFFFFF;
+			margin-bottom: 2rem;
+			/* 3 */
+
+			border: 4px solid #54C8ED;
+			li{
+				position: relative;
+				font-size: rem(28);
+				list-style: none;
+				padding-left: rem(30);
+				&::before{
+					content: '';
+					left: 0;
+					top: em(14);
+					width: rem(14);
+					height: rem(4);
+					background-color: $primary;
+					position: absolute;
+				}
+			}
+		}
+		&__title{
+			font-weight: 600;
+			font-size: rem(93.3591px);
+			line-height: (114 / 93.3591);
+			letter-spacing: 0.015em; 
+			color: $primary;
+			margin-bottom: em(10);
+		}
+		&__title-sub{
+			font-size: rem(40);
+			line-height: (50 / 40);
+			font-weight: bold;
+			/* identical to box height */
+			margin-bottom: .5em;
+			letter-spacing: 0.015em;
+
+		}
+
+		&__text-block {
+			display: inline-block;
+			@include media-breakpoint-up(lg) {
+
+				padding: rem(20) rem(40);
+			}
+			padding: rem(20);
+			background-color: $primary;
+			margin-bottom: rem(76);
+			letter-spacing: 0.015em;
+				p{
+					color: #ffffff;
+					font-size: rem(30);
+					font-weight: bold;
+				}
+			&-title {
+				font-size: rem(40);
+				font-weight: bold;
+			}
+		}
+		&__btn{
+			@extend .btn;
+			@extend .btn-outline-gradient;
+			background-color: #ffffff;
+			width: rem(304);
+			margin-top: rem(40);
+		}
+		 
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	//
+	@include media-breakpoint-between(md, xl) { }
+	//
+	@include media-breakpoint-only(xl) {}
+	//
+	@include media-breakpoint-down(xl) {}
+} // end.sThis

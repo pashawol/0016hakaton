@@ -1,0 +1,48 @@
+mixin mob-mnu()
+	-
+		//- let path = require('path');
+		//- let fs = require('fs');
+		//- var requestURL = 'top-nav.json';
+		//- var request = new XMLHttpRequest();
+		//- request.open('GET', requestURL);
+		//- request.responseType = 'json';
+		//- let dataJson = JSON.parse(json);
+	//- h1= dataJson['lala'] 
+	
+	+b.menu-mobile--js.d-lg-none
+		+e.inner
+		
+			+mnu()
+			.text-right
+	//  мобильное меню
+mixin top-nav(l) 
+	// start top-nav
+	+b.top-nav
+		.container
+			.row
+				.col
+					+e.logo(href="/")
+						img(src="img/@2x/logo.png", alt="")
+				+e.col.col-xl-auto.order-xl-0.order-last
+					.nav-wrap
+						+mnu()  
+
+				if l
+					.col-auto
+						+e.btn--logout(href='#')
+							+pic("cabinet-1",'bg',0)
+							span.d-none.d-sm-inline Викторовская А.
+							+icon('log-out')
+				else
+					//- .col-auto
+					//- 	+e.btn.btn-primary(href='#') Регистрация
+					.col-auto
+					
+						+e.btn--cabinet.btn-white(href='#')
+							+icon('user')
+				.col-auto.d-xl-none
+					+b.toggle-menu-mobile--js
+						span
+					
+	// end top-nav
+

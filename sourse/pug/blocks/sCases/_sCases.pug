@@ -1,0 +1,19 @@
+mixin sCases(data)
+	// start sCases
+	+b.SECTION.sCases.section#sCases&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Кейсы
+				
+			+e.slider-wrap
+				+e.slider--js.swiper-container
+					.swiper-wrapper
+						- for (var x = 0; x < 4; x++)
+							+e.slide.swiper-slide
+								.h4.text-secondary Кейс 1
+								.h3.strong Молодежная политика: стратегии и перспективы развития
+								.h4 Формирование компетенций молодежи для прорывных решений в&nbsp;молодежной политике. 
+
+								.h4 Новые общемировые вызовы и&nbsp;тенденции, связанные с&nbsp;ускоряющимся технологическим прогрессом, поставленные цели национального развития Российской Федерации требуют системного обновления государственной молодежной политики (далее&nbsp;&mdash; ГМП) ...
+								+e.btn(href="#") Узнать больше
+				.swiper-pagination

@@ -1,0 +1,141 @@
+	.nav-wrap {
+		@include media-breakpoint-down(xl) {
+			.row {
+
+				justify-content: center;
+			}
+		}
+		
+		@include media-breakpoint-up(xl) {
+			display: block !important;
+			position: relative;
+			padding-left: 0;
+			padding-right: 0;
+
+		}
+
+		padding-left: 15px;
+		padding-right: 15px;
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+
+		&.active {
+			display: block;
+		}
+
+		@include media-breakpoint-down(lg) {
+			background-color: $body-bg;
+			padding: rem(30) 15px rem(60);
+			border-bottom: 1px solid #ccc;
+			text-align: center;
+
+			&::before {
+				content: '';
+				z-index: -1;
+				background-color: $body-bg;
+				left: -100vw;
+				width: 300vw;
+				top: 0;
+				height: 100%;
+				position: absolute;
+			}
+		}
+	}
+
+	.navMenu {
+
+		@include media-breakpoint-up(sm) {
+
+			// max-width: rem(700);
+		}
+
+		display: flex;
+		list-style: none;
+		align-items: center;
+		flex-wrap: wrap;
+		text-align: center;
+		font-weight: 500;
+		@include rfs(17px);
+		justify-content: flex-end;
+		@include media-breakpoint-up(xxl) {
+			@include roww(rem(60));
+			padding-right: rem(65);
+		}
+
+		@include roww(rem(20));
+		margin-bottom: 0;
+		// margin-bottom: 2rem;
+
+		@include media-breakpoint-up(lg) {
+			padding-right: 0;
+		}
+
+		align-items: center;
+
+		li {
+			margin-top: rem(4);
+			margin-bottom: rem(4);
+		}
+
+		&__link {
+			color: var(--bs-secondary);
+			display: inline-block;
+			line-height: 1;
+			font-weight: bold;
+
+			@include media-breakpoint-up(sm) {
+				margin-bottom: 0;
+			}
+
+			margin-bottom: 1rem;
+
+			&.active,
+			&:hover {
+				color: $primary !important;
+			}
+		}
+	}
+
+	.user-block {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		margin-right: rem(20);
+
+		&__caption {
+			margin-right: rem(21);
+
+			@include media-breakpoint-up(lg) {
+
+				display: block;
+			}
+
+			display: none;
+			text-align: right;
+		}
+
+		&__name {
+			font-size: $small;
+			font-weight: bold;
+			display: block;
+		}
+
+		&__text {
+			font-size: rem(11);
+			display: block;
+			color: #000000;
+			opacity: 0.5;
+		}
+
+		picture {
+			width: rem(40);
+			height: rem(40);
+			border-radius: 50%;
+			position: relative;
+			overflow: hidden;
+			border: 3px solid $primary;
+		}
+	}

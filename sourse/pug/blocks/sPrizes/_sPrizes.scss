@@ -1,0 +1,99 @@
+
+	// start .sPrizes
+	.sPrizes {
+		 
+		.row{
+			max-width: rem(930);
+			position: relative;
+				@include media-breakpoint-up(lg) {
+			&::after{
+				content: '';
+				top: -10%;
+				left: 80%;
+				background-image: url(../img/svg/prizes-after.svg);
+				width: rem(1050);
+				height: rem(1050);
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+				background-position: center center;
+				position: absolute;
+			}
+			}
+		}
+		&__title{
+			line-height: 110.8%; 
+			letter-spacing: 0.015em;
+			text-transform: uppercase;  
+			background:linear-gradient(93.21deg, #FC9246 0%, #54C8ED 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			position: relative;
+			padding-left: rem(20);
+			min-height: rem(105);
+			display: flex;
+			align-items: center;
+			margin-bottom: rem(30);
+			z-index: 2;
+			font-weight: 500;
+			// display: flex;
+			
+
+					&::before{
+						content: '';
+						background-image: url(../img/svg/circles-xs.svg);
+				width: rem(105);
+				height: rem(105);
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+				background-position: center center;
+				@include a-cent(y);
+				left: rem(-20);
+				z-index: -1;
+			 
+		}
+		}
+		&__col:nth-child(1) &__title{
+			font-size: rem(80px);
+		}
+		&__col:nth-child(2) &__title{
+			font-size: rem(60px);
+		}
+		&__col:nth-child(3) &__title{
+			font-size: rem(50px);
+		}
+		&__col:nth-child(4) &__title{
+			font-size: rem(40px);
+
+		}
+		&__col:nth-child(5) &__title{
+			font-size: rem(30px);
+
+		}
+		&__col{
+			margin-bottom: rem(50);
+		}
+
+		p{
+			 font-size: $h4-font-size;
+			 font-weight: 500;
+			line-height: 130%;
+			/* or 36px */
+
+			letter-spacing: 0.015em;
+
+			/* 2 */
+
+			color: #5D6773;
+
+		}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	//
+	@include media-breakpoint-between(md, xl) { }
+	//
+	@include media-breakpoint-only(xl) {}
+	//
+	@include media-breakpoint-down(xl) {}
+} // end.sPrizes

@@ -1,0 +1,29 @@
+mixin headerBlock()
+	// start headerBlock
+	+b.headerBlock.section#headerBlock&attributes(attributes)
+
+		+marquee.text-1.d-none.d-sm-flex(direction="right")
+		+marquee.text-2.d-none.d-sm-flex
+		.container
+			+e.text-block
+				+e.date 	11-13 декабря
+				h1    
+					span.z--2
+						+e.STRONG.circle.border-warning   
+						+e.STRONG.circle.border-primary
+						| Идея 
+						| Дизай
+					span.z--1 н 
+					span.z--2
+						| Продукт
+				+e.img-wrap
+					+pic('malecula')
+					+e.gradient-circle
+						+ellipses()
+			.row.align-items-center
+				.col-lg-6
+					p 48 часов интенсивной командной работы  #[em.strong  ONLINE =] реальные решения, актуальные для молодежи #[strong здесь и сейчас]
+				.col
+					+e.btn(href="#") Зарегистрироваться
+						i
+	// end headerBlock

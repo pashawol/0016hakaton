@@ -1,0 +1,144 @@
+ 
+.top-nav {
+	 	
+	position: relative;                               
+	z-index: 200;
+	left: 0;
+	top: 0;
+	--topSpacing: #{rem(58)};
+	.row{
+		@include roww(20px);
+		align-items: center;
+	}
+	padding-top: var(--topSpacing);
+	padding-bottom: calc(var(--topSpacing) * .65);
+	 
+	.container{
+		position: relative;
+ 
+	}
+		&__logo {
+			@include mt;
+			img{
+				@extend .res-i;
+			}
+ 
+		}
+ 
+	.row{
+		align-items: center;
+		@include roww(27px);
+	}
+ 
+	&__col {
+		position: relative;
+	}
+
+
+	&__cabinet{
+		display: flex;
+		align-items: center;
+	}
+ 
+	&__btn{
+	 
+		@extend .btn;  
+		.icon{
+			font-size: rem(24);
+		}
+			@include media-breakpoint-up(xxl) {
+
+				padding-left: 1.65rem;
+				padding-right: 1.65rem;
+			}
+		 &--lang{
+			  
+		 }
+		 &--cabinet{
+			//  width: rem;
+			width: rem(48);
+			text-align: center;
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+			 @extend .text-primary;
+		 }
+	}
+	&__btn-user{
+		 
+		@extend .btn; 
+		@extend .btn-outline-primary; 
+		padding: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: rem(48);
+		height: rem(48);
+		.icon{
+			font-size: rem(24);
+		}
+	}
+
+
+	&__btn--logout{
+		display: flex;
+		@extend .btn;
+		@extend .btn-danger;
+		// padding: 0;
+		padding-top: 0;
+		padding-left: 0;
+		padding-bottom: 0;
+		align-items: center;
+		font-size: 1rem;
+		height: rem(48);
+		position: relative;
+		&::before{
+			content: '';
+			position: absolute;
+			background-color: $primary;
+			width: 1rem;
+			height: 1rem;
+			top: -0.5rem;
+			left: -.5rem;
+			border-radius: 50%;
+
+		}
+		picture{
+			width: rem(48);
+			height: calc(100% + 2px);
+			margin: -1px; 
+			margin-right: rem(22);
+		}
+		.icon{
+			@include media-breakpoint-up(sm) {
+
+				margin-left: rem(22);
+			}
+		}
+	}
+	// 
+	@include media-breakpoint-up(xxl) {
+		.container{
+			// max-width: 1805px;
+		}
+	}
+
+	@include media-breakpoint-up(lg) {}
+
+	@include media-breakpoint-up(md) {}
+	
+	@include media-breakpoint-up(sm) {}
+	
+	@include media-breakpoint-up(xs) {}
+	
+	
+	// 
+	@include media-breakpoint-down(xl) {}
+	
+	@include media-breakpoint-down(lg) {}
+	
+	@include media-breakpoint-down(md) {}
+	
+	@include media-breakpoint-down(sm) {}
+	
+	@include media-breakpoint-down(xs) {}
+}

@@ -1,0 +1,21 @@
+//- pugination
+mixin pugin()
+	.pagination-wrapper
+		ul.page-numbers
+			mixin li(n)
+				li
+					if n
+						a.page-numbers(href='#')= n 
+					else
+						block
+			+li()
+				span.prev.page-numbers( )
+					+icon('chevron-left')
+		 
+			+li()
+				span.page-numbers.current  1 
+			+li(2)
+			+li(3)
+			+li()
+				a.next.page-numbers(href='#')
+					+icon('chevron-right')

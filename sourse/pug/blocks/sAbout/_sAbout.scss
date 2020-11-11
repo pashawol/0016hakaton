@@ -1,0 +1,85 @@
+
+	// start .sAbout
+	.sAbout {
+		--sPT: #{rem(40)};
+			@include media-breakpoint-up(md){
+
+				.row{
+					--bs-gutter-x: #{rem(64)};
+				}
+			}
+		&__text{
+			@extend .h3;
+			letter-spacing: 0.015em;
+			line-height: 1.3;
+			color: #5D6773;
+			padding-top: em(7);
+			margin-bottom: 2em;
+		}
+		&__text-border{
+			@extend .h4;
+			// @include rfs(28px);
+			font-weight: 500;
+			letter-spacing: 0.015em;
+			line-height: 1.5;
+			@include media-breakpoint-up(md) {
+
+				padding: rem(48) rem(55);
+			}
+			padding: rem(40) rem(25);
+			border: rem(4px) solid #5D6773;
+			color: #5D6773;
+			position: relative;
+		 
+			&::after{
+				content: '';
+				position: absolute;
+				background-image: url(../img/svg/icons.svg);
+				width: rem(256.94+ 40);
+				height: rem(56.86px);
+				left: rem(50);
+				top: rem(-56.86 / 2);
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-color: #ffffff;
+			}
+		}
+
+
+
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				// z-index: -1;
+				width: rem(900px);
+				height: rem(900px);
+				mix-blend-mode: normal;
+				filter: blur(60px);
+				@include a-cent(y);
+				border-radius: 50%;
+				pointer-events: none;
+			}
+ 
+			position: relative;
+			&::after {
+				right: -800px;
+				top: 100px;
+
+				background: conic-gradient(from 167.69deg at 50% 50%, #54C8ED 0deg, #54C8ED 360deg);
+				filter: blur(100px);
+				animation: blinkingText 3.2s infinite;
+			}
+		 
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	//
+	@include media-breakpoint-between(md, xl) { }
+	//
+	@include media-breakpoint-only(xl) {}
+	//
+	@include media-breakpoint-down(xl) {}
+} // end.sAbout

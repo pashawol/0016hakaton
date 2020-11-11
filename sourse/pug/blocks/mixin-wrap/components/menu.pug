@@ -1,0 +1,16 @@
+
+//- menu
+mixin mnu()
+	-
+		var nav= { 
+			
+			"О проекте ":"#",
+			"Этапы":"#", 
+			"Призы":"#", 
+			"Контакты":"#", 
+			}
+	+b.UL.navMenu(itemscope itemtype="http://schema.org/SiteNavigationElement")
+	 
+		each linkPatch, linkName in nav
+			+e.LI.item( itemprop="item" ): +e.A.link(href= linkPatch  itemprop="url")= linkName
+//- /menu

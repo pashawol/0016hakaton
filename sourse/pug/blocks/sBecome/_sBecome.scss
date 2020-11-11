@@ -1,0 +1,93 @@
+
+	// start .sBecome
+	.sBecome {
+		position: relative;
+		--sPB: #{rem(300)};
+		padding-bottom: rem(150);
+		.container{
+			position: relative;
+				&::after{
+					content: '';
+					background-image: url(../img/@2x/material.png);
+					bottom: rem(-450);
+					left: rem(-400);
+					position: absolute;
+					width: rem(2048px);
+					height: rem(1075px);
+					background-size: contain;
+					background-repeat: no-repeat;
+				}
+			&::before{
+				content: url(../img/svg/icons-vertical.svg);
+				top: rem(370);
+				left: 0;
+				position: absolute;
+			}
+		}
+		.section-title{
+			max-width: rem(356);
+			position: relative;
+			margin-bottom: rem(120);
+			padding-bottom: 0;
+			@include media-breakpoint-down(md) {
+				margin-left: auto;
+				margin-right: auto;
+			}
+			&::before{
+				content: '';
+				background-image: url(../img/svg/circles.svg);
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+				background-position: center center;
+				@include a-cent;
+				margin-top: em(-100);
+				margin-left: rem(-80);
+				z-index: -1;
+				width: rem(420);
+				height: rem(428);
+				animation: spin 6s infinite;
+			}
+		}
+		li{
+			list-style: none;
+			position: relative;
+			padding-left: rem(33 + 39);
+			@extend .h4;
+			margin-bottom: rem(35);
+			max-width: rem(553 + 33 + 39);
+			&::before{
+				content: '';
+				left: 0;
+				background-image: url(../img/svg/arrow-left.svg);
+				width: rem(33);
+				height: rem(35);
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+				position: absolute;
+			}
+		}
+		 
+	@include media-breakpoint-up(xxl) {
+		ul{
+			padding-left: rem(30);
+		}
+	}
+	.text-1{
+		background: #54C8ED;
+		transform: rotate(-4.19deg);
+		right: rem(-100);
+		left: rem(-100);
+		min-width: calc(100% + #{rem(200)});
+	}
+	
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	//
+	@include media-breakpoint-between(md, xl) { }
+	//
+	@include media-breakpoint-only(xl) {}
+	//
+	@include media-breakpoint-down(xl) {}
+} // end.sBecome
