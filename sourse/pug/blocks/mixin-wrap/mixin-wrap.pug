@@ -90,75 +90,35 @@ mixin password(b="Зарегистрироваться")
 
 mixin ellipses()
 	.ellipses
-		svg(width='327' height='334' viewBox='0 0 327 334' fill='none' xmlns='http://www.w3.org/2000/svg')
-			path(d='M326.5 167C326.5 258.965 253.512 333.5 163.5 333.5C73.4875 333.5 0.5 258.965 0.5 167C0.5 75.0346 73.4875 0.5 163.5 0.5C253.512 0.5 326.5 75.0346 326.5 167Z' stroke='url(#paint0_linear)')
-			defs
-				lineargradient#paint0_linear(x1='0' y1='0' x2='344.304' y2='18.9087' gradientUnits='userSpaceOnUse')
-					stop(stop-color='#FC9246')
-					stop(offset='1' stop-color='#54C8ED')
-		svg(width='327' height='286' viewBox='0 0 327 286' fill='none' xmlns='http://www.w3.org/2000/svg')
-			path(d='M326.5 143C326.5 221.64 253.587 285.5 163.5 285.5C73.4126 285.5 0.5 221.64 0.5 143C0.5 64.3602 73.4126 0.5 163.5 0.5C253.587 0.5 326.5 64.3602 326.5 143Z' stroke='url(#paint0_linear)')
-			defs
-				lineargradient#paint0_linear(x1='0' y1='0' x2='343.928' y2='22.0581' gradientUnits='userSpaceOnUse')
-					stop(stop-color='#FC9246')
-					stop(offset='1' stop-color='#54C8ED')
-		svg(width='291' height='286' viewBox='0 0 291 286' fill='none' xmlns='http://www.w3.org/2000/svg')
-			path(d='M290.5 143C290.5 221.692 225.589 285.5 145.5 285.5C65.4105 285.5 0.5 221.692 0.5 143C0.5 64.3076 65.4105 0.5 145.5 0.5C225.589 0.5 290.5 64.3076 290.5 143Z' stroke='url(#paint0_linear)')
-			defs
-				lineargradient#paint0_linear(x1='0' y1='0' x2='306.326' y2='17.4835' gradientUnits='userSpaceOnUse')
-					stop(stop-color='#FC9246')
-					stop(offset='1' stop-color='#54C8ED')
-		svg(width='291' height='257' viewBox='0 0 291 257' fill='none' xmlns='http://www.w3.org/2000/svg')
-			path(d='M290.5 128.5C290.5 199.136 225.641 256.5 145.5 256.5C65.3585 256.5 0.5 199.136 0.5 128.5C0.5 57.8641 65.3585 0.5 145.5 0.5C225.641 0.5 290.5 57.8641 290.5 128.5Z' stroke='url(#paint0_linear)')
-			defs
-				lineargradient#paint0_linear(x1='0' y1='0' x2='306.089' y2='19.4413' gradientUnits='userSpaceOnUse')
-					stop(stop-color='#FC9246')
-					stop(offset='1' stop-color='#54C8ED')
-		svg(width='269' height='270' viewBox='0 0 269 270' fill='none' xmlns='http://www.w3.org/2000/svg')
-			path(d='M268.5 135C268.5 209.284 208.504 269.5 134.5 269.5C60.4956 269.5 0.5 209.284 0.5 135C0.5 60.716 60.4956 0.5 134.5 0.5C208.504 0.5 268.5 60.716 268.5 135Z' stroke='url(#paint0_linear)')
-			defs
-				lineargradient#paint0_linear(x1='0' y1='0' x2='283.205' y2='15.8273' gradientUnits='userSpaceOnUse')
-					stop(stop-color='#FC9246')
-					stop(offset='1' stop-color='#54C8ED')
+		img(src="img/svg/head-line-1.svg", alt="")
+		img(src="img/svg/head-line-2.svg", alt="")
+		img(src="img/svg/head-line-3.svg", alt="")
+		img(src="img/svg/head-line-4.svg", alt="")
+		img(src="img/svg/head-line-5.svg", alt="")
 
 
 mixin  marquee()
 	marquee(behavior="scroll" )&attributes(attributes)
 		.marquee-inner
-			| Дизайн
-			svg(width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg')
-				circle(cx='11.9891' cy='12.4526' r='9.88171' transform='rotate(-3.4581 11.9891 12.4526)' stroke='#343841' stroke-width='2.12816')
+			| Дизайн 
+			img(src="img/svg/markquee-1.svg" loading="lazy", alt="")
+			
 			| Продукт
-			svg(width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg')
-				path(d='M1.37305 11.114L20.2042 9.97607' stroke='#343841' stroke-width='2.12816')
-				path(d='M10.2197 1.12946L11.3577 19.9606' stroke='#343841' stroke-width='2.12816')
-			svg(width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg')
-				path(d='M7.6875 20.8161L20.1985 6.69582' stroke='#343841' stroke-width='2.12816')
-				path(d='M6.88281 7.50043L21.0031 20.0114' stroke='#343841' stroke-width='2.12816')
-			svg(width='23' height='23' viewBox='0 0 23 23' fill='none' xmlns='http://www.w3.org/2000/svg')
-				path(d='M12.2043 21.466L11.0524 2.40374M11.0524 2.40374L1.6937 12.7157M11.0524 2.40374L21.5847 11.5137' stroke='#343841' stroke-width='2.12816')
+			img(src="img/svg/markquee-2.svg" loading="lazy", alt="")
+			
+			img(src="img/svg/markquee-3.svg" loading="lazy", alt="")
+			
+			img(src="img/svg/markquee-4.svg" loading="lazy", alt="")
 			| Росмолодежь
-			svg(width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg')
-				circle(cx='11.9891' cy='12.4526' r='9.88171' transform='rotate(-3.4581 11.9891 12.4526)' stroke='#343841' stroke-width='2.12816')
-			<svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M1.31378 10.5173L16.7713 9.38405M16.7713 9.38405L8.29973 1.81857M16.7713 9.38405L9.49371 18.1042" stroke="#343841" stroke-width="2.12816"/>
-				</svg>
-			<svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M6.81314 0.28835L7.68333 12.1575M7.68333 12.1575L13.3126 5.66575M7.68333 12.1575L1.16743 6.55617" stroke="#343841" stroke-width="2.12816"/>
-				</svg>
+			img(src="img/svg/markquee-1.svg" loading="lazy", alt="")
+			
+			img(src="img/svg/markquee-5.svg" loading="lazy", alt="")
+			
+			img(src="img/svg/markquee-6.svg" loading="lazy", alt="")
 			| Хакатон
-			<svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M6.81314 0.28835L7.68333 12.1575M7.68333 12.1575L13.3126 5.66575M7.68333 12.1575L1.16743 6.55617" stroke="#343841" stroke-width="2.12816"/>
-				</svg>
-			svg(width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg')
-				path(d='M1.37305 11.114L20.2042 9.97607' stroke='#343841' stroke-width='2.12816')
-				path(d='M10.2197 1.12946L11.3577 19.9606' stroke='#343841' stroke-width='2.12816')
+			img(src="img/svg/markquee-6.svg" loading="lazy", alt="")
+			img(src="img/svg/markquee-2.svg" loading="lazy", alt="")
 			| Идея
-			svg(width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg')
-				path(d='M1.37305 11.114L20.2042 9.97607' stroke='#343841' stroke-width='2.12816')
-				path(d='M10.2197 1.12946L11.3577 19.9606' stroke='#343841' stroke-width='2.12816')
-			<svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M1.31378 10.5173L16.7713 9.38405M16.7713 9.38405L8.29973 1.81857M16.7713 9.38405L9.49371 18.1042" stroke="#343841" stroke-width="2.12816"/>
-			</svg>
-			svg(width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg')
-				circle(cx='11.9891' cy='12.4526' r='9.88171' transform='rotate(-3.4581 11.9891 12.4526)' stroke='#343841' stroke-width='2.12816')
+			img(src="img/svg/markquee-2.svg" loading="lazy", alt="")
+			img(src="img/svg/markquee-5.svg" loading="lazy", alt="")
+			img(src="img/svg/markquee-1.svg" loading="lazy", alt="")

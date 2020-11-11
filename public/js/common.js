@@ -207,15 +207,13 @@ function eventHandler() {
 	JSCCommon.heightwindow();
 	JSCCommon.animateScroll(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-
-	var x = window.location.host;
-	var screenName;
-	screenName = 'main.jpg';
-
-	if (screenName && x === "localhost:3000") {
-		$(".footer").after("<div class=\"pixel-perfect\" style=\"background-image: url(screen/".concat(screenName, ");\"></div>"));
-	} // /добавляет подложку для pixel perfect
-
+	// var x = window.location.host;
+	// let screenName;
+	// screenName = 'main.jpg';
+	// if (screenName && x === "localhost:3000") {
+	// 	$(".footer").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
+	// }
+	// /добавляет подложку для pixel perfect
 
 	function whenResize() {
 		var topH = $("header ").innerHeight();
@@ -254,7 +252,7 @@ function eventHandler() {
 
 	$("marquee .marquee-inner").each(function () {
 		var html = $(this).html();
-		$(this).html(html.repeat(1000));
+		$(this).html(html.repeat(100));
 	});
 }
 

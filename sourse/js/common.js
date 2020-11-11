@@ -199,12 +199,12 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	var x = window.location.host;
-	let screenName;
-	screenName = 'main.jpg';
-	if (screenName && x === "localhost:3000") {
-		$(".footer").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
-	}
+	// var x = window.location.host;
+	// let screenName;
+	// screenName = 'main.jpg';
+	// if (screenName && x === "localhost:3000") {
+	// 	$(".footer").after(`<div class="pixel-perfect" style="background-image: url(screen/${screenName});"></div>`);
+	// }
 	// /добавляет подложку для pixel perfect
 
 
@@ -258,7 +258,7 @@ function eventHandler() {
 
 	$("marquee .marquee-inner").each(function () {
 		let html = $(this).html(); 
-		$(this).html(html.repeat(1000) )
+		$(this).html(html.repeat(100) )
 	})
 	
 };
