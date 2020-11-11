@@ -27,8 +27,7 @@ mixin input(placeholder,  t='text', label, name=`${t}-ocs`)
 				+b.SPAN.input-title= label
 		else
 			+t(t,placeholder, name)&attributes(attributes)
-			block
-		block
+			block 
 	// +e.input-wrap
 	
 mixin input2(placeholder,  t='text', label, name=`${t}-ocs`)

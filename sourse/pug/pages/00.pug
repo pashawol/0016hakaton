@@ -1,0 +1,43 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+include ../blocks/sAbout/_sAbout.pug
+include ../blocks/sBecome/_sBecome.pug
+include ../blocks/sThis/_sThis.pug
+include ../blocks/sFor/_sFor.pug
+include ../blocks/sWhat/_sWhat.pug
+include ../blocks/sCases/_sCases.pug
+include ../blocks/sRoadMap/_sRoadMap.pug
+include ../blocks/sPrizes/_sPrizes.pug
+include ../blocks/sWhatDo/_sWhatDo.pug
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Оставьте заявку на участие'
+	title= title
+block pagecontent
+ 
+	+top-nav()  
+	.sThanks.section.container.text-center
+		.h1 Lorem ipsum dolor sit amet consectetur adipisicing elit 
+		.h4 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum quo aspernatur iure obcaecati quod harum quia accusamus eos? Dicta impedit ipsum nihil eveniet similique itaque architecto labore consequuntur? Ea, dolore.Blanditiis atque accusantium itaque facilis.  
+		a.btn.btn-outline-gradient.px-4.link-modal(href="#modal-thanks") Кнопка
+
+	//- +sAbout
+	//- +sBecome
+	//- +sThis
+	//- +sFor
+	//- +sWhat
+	//- +sCases
+	//- +sRoadMap
+	//- +sPrizes
+	//- +sWhatDo
+	//- +sForm()
+	+sContact()
+	+footer()
+
+
+	

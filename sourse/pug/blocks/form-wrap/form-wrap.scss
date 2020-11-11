@@ -1,5 +1,10 @@
+.input-title{
+	color: #343841;
+	font-size: 14px;
+}
 .form-group{
 	margin-bottom: 1rem;
+	position: relative;
 	
 }
 .input-title{
@@ -15,6 +20,14 @@
 }
 .form-wrap{
 	margin-bottom: rem(28);
+	&__smallest{
+		position: absolute;
+		right: 0;
+		top: 0;
+		font-size: 12px;
+		color: #343841;
+		opacity: 0.5;
+	}
 	.autocomplete-spokenvalue{
 		display: none !important;
 	}
@@ -175,9 +188,11 @@
 
 
 .custom-input{
-	display: block;
-	margin: auto;
-	 
+	display: block; 
+	 line-height: 100%;
+	 /* or 21px */
+
+	 letter-spacing: 0.015em;
 	margin-bottom: rem(20);
 	cursor: pointer;
 	position: relative;
@@ -197,10 +212,10 @@
 	&__lab{
 		left: 0;
 		display: block;
-		top: rem(1); 
+		top: rem(5); 
 		width: 24px;
 		height: 24px;
-		border: 2px solid #DCDDDE;
+		background: #373737;
 		box-sizing: border-box;
 		// border-radius: 4px;
 		@include mt;
@@ -219,7 +234,7 @@
 		&::after{ 
 			content: url("../img/svg/check.svg");
 			position: absolute;
-		 top: rem(0);
+		 top: rem(5);
 			opacity: 0;
 			height: rem(24);
 			text-align: center;
@@ -236,15 +251,13 @@
 		}
 	}
 
-	&__input:checked + &__lab{ 
-		 border-color: $primary;
+	&__input:checked + &__lab{  
 		&::after{
 	
 			opacity: 1;
 		}
 	}
-	&__input[type="checkbox"]:checked +&__lab {
-		background-color: #ffffff;
+	&__input[type="checkbox"]:checked +&__lab { 
 	}
 	&__text{
 		// font-size: rem(11);

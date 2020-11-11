@@ -94,6 +94,13 @@ body {
 	}
 }
 
+.page-title{
+	padding-bottom: rem(46);
+	h1{
+		@extend .h3;
+		font-weight: bold;
+	}
+}
 
 
 .mono {
@@ -466,5 +473,33 @@ marquee{
 			100% {
 				transform: scale(1);
 				opacity: 1;
+			}
+		}
+
+		.sLogin{
+				border-bottom: 3px solid rgba($color: #000000, $alpha: .5);
+				margin-bottom: var(--sPB);
+			&__text{
+				max-width: rem(360);
+				margin-left: auto;
+			}
+			.form-wrap{
+				max-width: rem(320 *2 + 40);
+				&__input{
+					border-width: 1px;
+				}
+			}
+		}
+
+		.sThanks{
+			.h1{
+				margin-left: auto;
+				margin-right: auto;
+				max-width: rem(900);
+			}
+			.h4{
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 1200px;
 			}
 		}
