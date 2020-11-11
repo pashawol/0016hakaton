@@ -1,1 +1,2 @@
-1. Отключил lazy плагин. Поставил  loading="lazy"
+<!-- https://github.com/pashawol/0016hakaton -->
+1. <https://pashawol.github.io/0016hakaton/public>
