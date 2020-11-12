@@ -39,20 +39,21 @@ mixin reg(b="Отправить")
 	+form-wrap().form-wrap--sm
 		.row
 			.col-lg-6
-				+input("",'text','Фамилия')(required class="form-control-sm")
+				+input("",'text','Фамилия', 'lname')(required class="form-control-sm")
 			.col-lg-6
-				+input("",'text','Имя')(required class="form-control-sm")
+				+input("",'text','Имя', 'fname')(required class="form-control-sm")
 			.col-lg-6
-				+input("",'text','Отчество')(required class="form-control-sm")
+				+input("",'text','Отчество', 'patronymic')(class="form-control-sm")
+					+e.smallest При наличии
 			.col-lg-6
-				+input("",'text','Аккаунт в Telegram')(required class="form-control-sm")
+				+input("",'text','Аккаунт в Telegram', 'telegram')(class="form-control-sm")
 					+e.smallest Необязательно
 			.col-lg-6
-				+input("+7 ___ ___ __ __",'tel','Телефон*')(required class="form-control-sm")
+				+input("+7 ___ ___ __ __",'tel','Телефон*', 'phone')(required class="form-control-sm")
 			.col-lg-6
 				+input("",'email','E-mail')(required class="form-control-sm")
 			.col-lg-6
-				+input("",'text','Город')(required class="form-control-sm")
+				+input("",'text','Город', 'city')(required class="form-control-sm")
 			.w-100 
 			.col-lg-6
 				button.btn.btn-outline-gradient.w-100.mb-4(type="submit")= b
