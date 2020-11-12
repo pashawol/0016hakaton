@@ -19,7 +19,7 @@
 				}
 			&::before{
 				content: url(../img/svg/icons-vertical.svg);
-				top: rem(370);
+				top: rem(450);
 				left: 0;
 				position: absolute;
 			}
@@ -40,8 +40,8 @@
 				background-size: 100% 100%;
 				background-position: center center;
 				@include a-cent;
-				margin-top: em(-100);
-				margin-left: rem(-80);
+				margin-top: em(-60);
+				margin-left: rem(-60);
 				z-index: -1;
 				width: rem(420);
 				height: rem(428);

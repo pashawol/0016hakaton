@@ -153,9 +153,9 @@
 			}
  		transform: rotate(-3.46deg);
  		position: absolute;
-		 right: rem(-50);
-		 left: rem(-50);
-		 min-width: calc(100% + #{rem(100)});
+		 right: rem(-70);
+		 left: rem(-70);
+		 min-width: calc(100% + #{rem(140)});
 		 @include media-breakpoint-up(xl) {
 
 			 top: rem(500);

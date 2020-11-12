@@ -99,27 +99,32 @@ mixin ellipses()
 
 
 mixin  marquee()
-	marquee(behavior="scroll" )&attributes(attributes)
-		.marquee-inner
-			| Дизайн 
-			img(src="img/svg/markquee-1.svg" loading="lazy", alt="")
-			
-			| Продукт
-			img(src="img/svg/markquee-2.svg" loading="lazy", alt="")
-			
-			img(src="img/svg/markquee-3.svg" loading="lazy", alt="")
-			
-			img(src="img/svg/markquee-4.svg" loading="lazy", alt="")
-			| Росмолодежь
-			img(src="img/svg/markquee-1.svg" loading="lazy", alt="")
-			
-			img(src="img/svg/markquee-5.svg" loading="lazy", alt="")
-			
-			img(src="img/svg/markquee-6.svg" loading="lazy", alt="")
-			| Хакатон
-			img(src="img/svg/markquee-6.svg" loading="lazy", alt="")
-			img(src="img/svg/markquee-2.svg" loading="lazy", alt="")
-			| Идея
-			img(src="img/svg/markquee-2.svg" loading="lazy", alt="")
-			img(src="img/svg/markquee-5.svg" loading="lazy", alt="")
-			img(src="img/svg/markquee-1.svg" loading="lazy", alt="")
+	.slider-line-wrap&attributes(attributes)
+		+b.slider-line--js.swiper-container
+			.swiper-wrapper  
+				- for (var x = 0; x < 3; x++)
+					+e.slide.swiper-slide
+						//- .swiper-no-swiping
+						.marquee-inner
+							| Дизайн 
+							img(src="img/svg/markquee-1.svg"  alt="")
+							
+							| Продукт
+							img(src="img/svg/markquee-2.svg"  alt="")
+							
+							img(src="img/svg/markquee-3.svg"  alt="")
+							
+							img(src="img/svg/markquee-4.svg"  alt="")
+							| Росмолодежь
+							img(src="img/svg/markquee-1.svg"  alt="")
+							
+							img(src="img/svg/markquee-5.svg"  alt="")
+							
+							img(src="img/svg/markquee-6.svg"  alt="")
+							| Хакатон
+							img(src="img/svg/markquee-6.svg"  alt="")
+							img(src="img/svg/markquee-2.svg"  alt="")
+							| Идея
+							img(src="img/svg/markquee-2.svg"  alt="")
+							img(src="img/svg/markquee-5.svg"  alt="")
+							img(src="img/svg/markquee-1.svg"  alt="")

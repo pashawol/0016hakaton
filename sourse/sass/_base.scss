@@ -35,6 +35,16 @@ body {
 	min-width: 320px;  
 	letter-spacing: 0.015em;
 	position: relative; 
+	@include mt;
+	&.loaded_hiding{
+
+		opacity: 0;
+		pointer-events: none;
+	}
+	.loaded{
+		pointer-events: visible;
+		opacity: 1;
+	}
 	&::before {
 		content: '';
 		position: absolute;
@@ -323,6 +333,7 @@ ul {
 		margin-left: rem(8);
 		// padding-right: rem(8);
 		margin-right: rem(5);
+		opacity: 1 !important;
 
 		&-active,
 		&:hover {
@@ -407,9 +418,20 @@ iframe {
 	align-items: center;
 
 }
-marquee{
+.slider-line{
+	 width: 100%;
+	&__slide{
+		width: auto !important;
+	}
+	.swiper-wrapper{
+		 -webkit-transition-timing-function: linear !important;
+		 transition-timing-function: linear !important;
+	}
+}
+.slider-line-wrap {
 	display: flex;
 	align-items: center;
+	 
 	.marquee-inner{
 		display: flex;
 		align-items: center;
