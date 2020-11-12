@@ -6,6 +6,18 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 var JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
 	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
@@ -155,6 +167,78 @@ var JSCCommon = {
 		});
 		Inputmask("+9(999)999-99-99").mask(InputTel);
 	},
+	confirmClaim: function confirmClaim() {
+		var API_BASE = 'https://ideahack.ru/api/v1/';
+
+		if (window.location.href.includes('confirmation') && window.location.search !== '') {
+			$.ajax({
+				contentType: 'application/json',
+				url: API_BASE + 'claim/confirm' + window.location.search,
+				type: 'POST'
+			}).done(function (response) {
+				$(document).ready(function () {
+					$('#confirmTitle').text("Заявка успешно подтверждена!");
+					$('#confirmDescription').text("О полноценной регистрации мы сообщим вам на почту, указанную в заявке на участие.");
+				});
+			}).fail(function () {
+				$(document).ready(function () {
+					$('#confirmTitle').text("Ошибка подтверждения заявки");
+					$('#confirmDescription').text("Ссылка больше не действительна. Попробуйте отправить ссылку снова. В случае проблем, пожалуйста, обратитесь в службу поддержки.");
+				});
+			});
+		}
+	},
+	sendForm: function sendForm() {
+		var API_BASE = 'https://ideahack.ru/api/v1/';
+
+		var dictCopy = function dictCopy(dict, copyFields) {
+			var result = {};
+
+			for (var _i = 0, _Object$entries = Object.entries(dict); _i < _Object$entries.length; _i++) {
+				var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
+						key = _Object$entries$_i[0],
+						value = _Object$entries$_i[1];
+
+				if (copyFields.includes(key)) {
+					result[key] = value;
+				}
+			}
+
+			return result;
+		};
+
+		$("#registrationForm").submit(function (e) {
+			e.preventDefault();
+			var data = {};
+			$('form').serializeArray().forEach(function (el) {
+				data[el['name']] = el['value'];
+			});
+			data['name'] = data['fname'];
+			data['surname'] = data['lname'];
+			data['confirm_url'] = window.location.origin + '/confirmation.html';
+			data = dictCopy(data, ['name', 'surname', 'patronymic', 'telegram', 'phone', 'email', 'city', 'confirm_url']);
+			$.ajax({
+				contentType: 'application/json',
+				url: API_BASE + 'claim',
+				type: 'POST',
+				data: JSON.stringify(data),
+				processData: false
+			}).done(function (response) {
+				$.fancybox.close();
+				$.fancybox.open({
+					src: '#modal-success',
+					type: 'inline'
+				});
+				$(this).trigger("reset");
+			}).fail(function () {
+				$.fancybox.close();
+				$.fancybox.open({
+					src: '#modal-error',
+					type: 'inline'
+				});
+			});
+		});
+	},
 	// /inputMask
 	ifie: function ifie() {
 		var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
@@ -203,6 +287,8 @@ function eventHandler() {
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
+	JSCCommon.confirmClaim();
+	JSCCommon.sendForm();
 	JSCCommon.inputMask();
 	JSCCommon.heightwindow();
 	JSCCommon.animateScroll(); // JSCCommon.CustomInputFile();

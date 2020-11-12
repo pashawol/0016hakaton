@@ -13,10 +13,15 @@ mixin modal()
 			+polite()
 	// #modal-call
 	
-	+b.modal-win(id="modal-thanks" class=" " style="display: none" ) 
+	+b.modal-win(id="modal-success" class=" " style="display: none" )
 		.text-center
-			+e.title.form-data.h3.ttu Спасибо!
-			p.after-headline Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est ut similique possimus doloribus quo impedit accusamus natus quaerat cupiditate temporibus?
+			+e.title.form-data.h4.ttu Подтвердите адрес электронной почты
+			p.after-headline На Вашу почту отправлено письмо. Пожалуйста, перейдите по ссылке, указанной в письме, для подтверждения заявки на участие. Ссылка действительна 72 часа.
+
+	+b.modal-win(id="modal-error" class=" " style="display: none" )
+		.text-center
+			+e.title.form-data.h4.ttu Произошла ошибка
+			p.after-headline Во время создания заявки произошла ошибка. Вероятно, для данной почты уже создана заявка. В случае проблем, пожалуйста, обратитесь в службу поддержки.
 	// #modal-call
 	
 	// end modals

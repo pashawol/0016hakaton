@@ -147,6 +147,76 @@ const JSCCommon = {
 		});
 		Inputmask("+9(999)999-99-99").mask(InputTel);
 	},
+
+	confirmClaim() {
+		const API_BASE = 'https://ideahack.ru/api/v1/'
+
+		if (window.location.href.includes('confirmation') && window.location.search !== '') {
+			$.ajax({
+				contentType: 'application/json',
+				url: API_BASE + 'claim/confirm' + window.location.search,
+				type: 'POST'
+			}).done(function (response) {
+				$( document ).ready(function() {
+					$('#confirmTitle').text("Заявка успешно подтверждена!")
+					$('#confirmDescription').text("О полноценной регистрации мы сообщим вам на почту, указанную в заявке на участие.")
+				});
+			}).fail(function () {
+				$( document ).ready(function() {
+					$('#confirmTitle').text("Ошибка подтверждения заявки")
+					$('#confirmDescription').text("Ссылка больше не действительна. Попробуйте отправить ссылку снова. В случае проблем, пожалуйста, обратитесь в службу поддержки.")
+				});
+			});
+		}
+	},
+
+	sendForm() {
+		const API_BASE = 'https://ideahack.ru/api/v1/'
+
+		const dictCopy = (dict, copyFields) => {
+			const result = {};
+			for (const [key, value] of Object.entries(dict)) {
+				if (copyFields.includes(key)) {
+					result[key] = value;
+				}
+			}
+			return result;
+		}
+
+		$("#registrationForm").submit(function (e) {
+			e.preventDefault();
+			let data = {}
+			$('form').serializeArray().forEach(el => {
+				data[el['name']] = el['value'];
+			});
+			data['name'] = data['fname']
+			data['surname'] = data['lname']
+			data['confirm_url'] = window.location.origin + '/confirmation.html'
+			data = dictCopy(data, ['name', 'surname', 'patronymic', 'telegram', 'phone', 'email', 'city',
+				'confirm_url'])
+			$.ajax({
+				contentType: 'application/json',
+				url: API_BASE + 'claim',
+				type: 'POST',
+				data: JSON.stringify(data),
+				processData: false
+			}).done(function (response) {
+				$.fancybox.close();
+				$.fancybox.open({
+					src: '#modal-success',
+					type: 'inline'
+				});
+				$(this).trigger("reset");
+			}).fail(function () {
+				$.fancybox.close();
+				$.fancybox.open({
+					src: '#modal-error',
+					type: 'inline'
+				});
+			});
+
+		});
+	},
 	// /inputMask
 	ifie() {
 		var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
@@ -193,6 +263,8 @@ function eventHandler() {
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('tabs');
 	JSCCommon.mobileMenu();
+	JSCCommon.confirmClaim();
+	JSCCommon.sendForm();
 	JSCCommon.inputMask(); 
 	JSCCommon.heightwindow();
 	JSCCommon.animateScroll();
