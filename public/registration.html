@@ -78,7 +78,7 @@
 				<div class="container"> 
 					<div class="row">
 						<div class="col-xl">
-							<div class="form-wrap form-wrap form-wrap--sm">
+							<div class="form-wrap form-wrap form-wrap--sm" id="registrationForm">
 								<form>
 									<input type="hidden" name="example-input-field"/>
 									<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
@@ -121,14 +121,14 @@
 										</div>
 										<div class="col-lg-6">
 											<div class="form-wrap__input-wrap form-group">
-												<label><input class="form-wrap__input form-control form-control-sm" type="tel" placeholder="+7 ___ ___ __ __" name="phone" required="required"/><span class="input-title">Телефон*</span>
+												<label><input class="form-wrap__input form-control form-control-sm" type="tel" placeholder="+7 ___ ___ __ __" name="phone" required="required"/><span class="input-title">Телефон</span>
 												</label>
 											</div>
 											<!-- +e.input-wrap-->
 										</div>
 										<div class="col-lg-6">
 											<div class="form-wrap__input-wrap form-group">
-												<label><input class="form-wrap__input form-control form-control-sm" type="email" placeholder="" name="email-ocs" required="required"/><span class="input-title">E-mail</span>
+												<label><input class="form-wrap__input form-control form-control-sm" type="email" placeholder="" name="email" required="required"/><span class="input-title">E-mail</span>
 												</label>
 											</div>
 											<!-- +e.input-wrap-->
@@ -145,7 +145,7 @@
 											<button class="btn btn-outline-gradient w-100 mb-4" type="submit">Отправить</button>
 										</div>
 										<div class="col-lg-6 align-self-center">
-											<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox" checked="checked"/><span class="custom-input__lab"></span><span class="custom-input__text small">Соглашаюсь на обработку  <a class="text-warning" href="#">персональных данных</a> </span>
+											<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox" required="required" checked="checked"/><span class="custom-input__lab"></span><span class="custom-input__text small">Соглашаюсь на обработку  <a class="text-warning" href="#">персональных данных</a> </span>
 											</label>
 										</div>
 									</div>
@@ -218,11 +218,18 @@
 			</div>
 		</div>
 		<!-- #modal-call-->
-		<div class="modal-win" id="modal-thanks" style="display: none"> 
+		<div class="modal-win" id="modal-success" style="display: none">
 			<div class="text-center">
-				<div class="modal-win__title form-data h3 ttu">Спасибо!
+				<div class="modal-win__title form-data h4 ttu">Подтвердите адрес электронной почты
 				</div>
-				<p class="after-headline">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est ut similique possimus doloribus quo impedit accusamus natus quaerat cupiditate temporibus?</p>
+				<p class="after-headline">На Вашу почту отправлено письмо. Пожалуйста, перейдите по ссылке, указанной в письме, для подтверждения заявки на участие. Ссылка действительна 72 часа.</p>
+			</div>
+		</div>
+		<div class="modal-win" id="modal-error" style="display: none">
+			<div class="text-center">
+				<div class="modal-win__title form-data h4 ttu">Произошла ошибка
+				</div>
+				<p class="after-headline">Во время создания заявки произошла ошибка. Вероятно, для данной почты уже создана заявка. В случае проблем, пожалуйста, обратитесь в службу поддержки.</p>
 			</div>
 		</div>
 		<!-- #modal-call-->

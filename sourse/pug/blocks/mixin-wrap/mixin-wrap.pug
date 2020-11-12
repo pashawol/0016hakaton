@@ -36,7 +36,7 @@ mixin page-title(title, ar)
 				block
 			
 mixin reg(b="Отправить")
-	+form-wrap().form-wrap--sm
+	+form-wrap().form-wrap--sm#registrationForm
 		.row
 			.col-lg-6
 				+input("",'text','Фамилия', 'lname')(required class="form-control-sm")
@@ -49,16 +49,16 @@ mixin reg(b="Отправить")
 				+input("",'text','Аккаунт в Telegram', 'telegram')(class="form-control-sm")
 					+e.smallest Необязательно
 			.col-lg-6
-				+input("+7 ___ ___ __ __",'tel','Телефон*', 'phone')(required class="form-control-sm")
+				+input("+7 ___ ___ __ __",'tel','Телефон', 'phone')(required class="form-control-sm")
 			.col-lg-6
-				+input("",'email','E-mail')(required class="form-control-sm")
+				+input("",'email','E-mail', 'email')(required class="form-control-sm")
 			.col-lg-6
 				+input("",'text','Город', 'city')(required class="form-control-sm")
 			.w-100 
 			.col-lg-6
 				button.btn.btn-outline-gradient.w-100.mb-4(type="submit")= b
 			.col-lg-6.align-self-center
-					+in-c()(checked)
+					+in-c(required=true)(checked)
 						+e.SPAN.text.small Соглашаюсь на обработку  #[a.text-warning(href="#") персональных данных] 
 
 
