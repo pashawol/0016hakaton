@@ -2,7 +2,7 @@ mixin headerBlock()
 	// start headerBlock
 	+b.headerBlock.section#headerBlock&attributes(attributes)
 
-		+marquee.text-1
+		+marquee('rtl').text-1
 		+marquee.text-2
 		.container
 			+e.text-block
@@ -17,7 +17,7 @@ mixin headerBlock()
 					span.z--2
 						| Продукт
 				+e.img-wrap
-					+pic('malecula')
+					+pic('malecula.png')
 					+e.gradient-circle
 						+ellipses()
 			.row.align-items-center

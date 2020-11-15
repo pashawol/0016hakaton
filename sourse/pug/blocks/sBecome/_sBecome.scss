@@ -8,7 +8,11 @@
 			position: relative;
 				&::after{
 					content: '';
-					background-image: url(../img/@2x/material.png);
+						@include media-breakpoint-up(sm){
+
+							background-image: url(../img/@2x/material.png);
+						}
+						background-image: url(../img/@1x/material.png);
 					bottom: rem(-450);
 					left: rem(-400);
 					position: absolute;
@@ -17,17 +21,23 @@
 					background-size: contain;
 					background-repeat: no-repeat;
 				}
+				@include media-breakpoint-up(lg) {
 			&::before{
-				content: url(../img/svg/icons-vertical.svg);
-				top: rem(450);
-				left: 0;
-				position: absolute;
-			}
+
+						left: 0;
+						position: absolute;
+						content: url(../img/svg/icons-vertical.svg);
+						top: rem(450);
+					}
+				}
 		}
 		.section-title{
 			max-width: rem(356);
 			position: relative;
-			margin-bottom: rem(120);
+			@include media-breakpoint-up(md){
+				margin-bottom: rem(120);
+			}
+			margin-bottom: rem(180);
 			padding-bottom: 0;
 			@include media-breakpoint-down(md) {
 				margin-left: auto;
@@ -40,7 +50,10 @@
 				background-size: 100% 100%;
 				background-position: center center;
 				@include a-cent;
-				margin-top: em(-60);
+					@include media-breakpoint-up(md){
+
+						// margin-top: em(-60);
+					}
 				margin-left: rem(-60);
 				z-index: -1;
 				width: rem(420);

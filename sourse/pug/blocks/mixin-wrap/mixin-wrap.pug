@@ -98,9 +98,9 @@ mixin ellipses()
 		img(src="img/svg/head-line-5.svg", alt="")
 
 
-mixin  marquee()
+mixin  marquee(dir)
 	.slider-line-wrap&attributes(attributes)
-		+b.slider-line--js.swiper-container
+		+b.slider-line--js.swiper-container(dir= dir)
 			.swiper-wrapper  
 				- for (var x = 0; x < 3; x++)
 					+e.slide.swiper-slide

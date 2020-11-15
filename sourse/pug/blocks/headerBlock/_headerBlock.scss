@@ -146,7 +146,13 @@
 	 z-index: 5;
 	 position: relative;
  }
+ @include media-breakpoint-down(sm) {
+	 .slider-line-wrap{
+		 display: none;
+	 }
+ }
  	.text-1 {
+				
 		 .marquee-inner{
 
 			 background: #F2F2F2;

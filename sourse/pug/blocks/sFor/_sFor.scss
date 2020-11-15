@@ -38,7 +38,8 @@
 				 width: rem(250);
 				 height: rem(250); 
 
-				 background: conic-gradient(from 167.69deg at 50% 50%, #FC4646 0deg, #FFB800 360deg);
+				 background-image: conic-gradient(from 167.69deg at 50% 50%, #FC4646 0deg, #FFB800 360deg),
+				 radial-gradient(circle, #FC4646 20%, #FFB800 100%);
 				 filter: blur(17.627px);
 				 animation: blinkingText 3.2s infinite;
 			 }

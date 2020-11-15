@@ -342,7 +342,7 @@ function eventHandler() {
 		// slidesPerView: 5,
 		// ...defaultSl,
 		slidesPerView: 'auto',
-		speed: 10000,
+		speed: 15000,
 		loop: true,
 		allowTouchMove: false,
 		// можно ещё отключить свайп
@@ -350,12 +350,7 @@ function eventHandler() {
 			delay: 0,
 			disableOnInteraction: false // или сделать так, чтобы восстанавливался autoplay после взаимодействия
 
-		} // freeMode: true,
-		// loopFillGroupWithBlank: true,
-		// // touchRatio: 0.2,
-		// slideToClickedSlide: false,
-		// freeModeMomentum: true,
-
+		}
 	}); // modal window
 
 	$("marquee .marquee-inner").each(function () {
