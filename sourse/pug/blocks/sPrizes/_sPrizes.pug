@@ -5,13 +5,16 @@ mixin sPrizes(data)
 			+b.section-title
 				h2 Призы:
 			.row
-				mixin item(t,p)
-					+e.col.col-md-6
-						+e.title= t
-						p= p
-				+item('I место','Оплаченная поездка  на Байкал, Териберку или Камчатку')
-				+item('II место','Курсы повышения квалификации в РАНХИГС или ВШЭ, Мастерской управления Сенеж')
-				+item('III место','Мерч от Хакатона Идей')
-				+item('IV место','Яндекс.Станция Алиса')
-				+item('V место','Стажировка команды победителей в рамках реализации их кейса и финансирование на реализацию идеи')
+				.col-xl-6
+					mixin item(p)
+						+e.col
+							p!= p
+					+item(`Финансовая поддержка  <strong>до&nbsp;1&nbsp;500&nbsp;000 рублей</strong>  на&nbsp;реализацию <br> лучших проектов`)
+					+item(`Возможность  <strong>пройти стажировку</strong>  в&nbsp;Федеральном агентстве  по&nbsp;делам молодежи`)
+					+item(`Полезный <br> <strong>мерч от&nbsp;Хакатона</strong>`)
+				.col-xl-6
+					+e.img-wrap
+						+pic('bottle_mockup_02.png')
+						img.res-i(src="img/svg/1500000.svg" loading="lazy", alt="")
+						+pic('Pullover.png.png') 
 	// end sPrizes
