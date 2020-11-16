@@ -2,24 +2,24 @@
 	// start .sPrizes
 	.sPrizes {
 		 
-		.row{
-			max-width: rem(930);
-			position: relative;
-				@include media-breakpoint-up(lg) {
-			&::after{
-				content: '';
-				top: -10%;
-				left: 80%;
-				background-image: url(../img/svg/prizes-after.svg);
-				width: rem(1050);
-				height: rem(1050);
-				background-size: 100% 100%;
-				background-repeat: no-repeat;
-				background-position: center center;
-				position: absolute;
-			}
-			}
-		}
+		// .row{
+		// 	max-width: rem(930);
+		// 	position: relative;
+		// 		@include media-breakpoint-up(lg) {
+		// 	&::after{
+		// 		content: '';
+		// 		top: -10%;
+		// 		left: 80%;
+		// 		background-image: url(../img/svg/prizes-after.svg);
+		// 		width: rem(1050);
+		// 		height: rem(1050);
+		// 		background-size: 100% 100%;
+		// 		background-repeat: no-repeat;
+		// 		background-position: center center;
+		// 		position: absolute;
+		// 	}
+		// 	}
+		// }
 		&__title{
 			line-height: 110.8%; 
 			letter-spacing: 0.015em;
@@ -38,45 +38,39 @@
 			// display: flex;
 			
 
-					&::before{
-						content: '';
-						background-image: url(../img/svg/circles-xs.svg);
-				width: rem(105);
-				height: rem(105);
+		}
+		
+		&__col{
+			margin-bottom: rem(50);
+			position: relative; 
+			// padding-left: rem(170 + 44);
+			display: flex;
+			align-items: center;
+			max-width: rem(650);
+			&::before{
+				content: '';
+				background-image: url(../img/svg/circle-with-gift.svg);
+				width: rem(170);
+				height: rem(170);
+				flex: 0 0 auto;
+				margin-right: rem(44);
 				background-size: 100% 100%;
 				background-repeat: no-repeat;
 				background-position: center center;
-				@include a-cent(y);
-				left: rem(-20);
-				z-index: -1;
-			 
-		}
-		}
-		&__col:nth-child(1) &__title{
-			font-size: rem(80px);
-		}
-		&__col:nth-child(2) &__title{
-			font-size: rem(60px);
-		}
-		&__col:nth-child(3) &__title{
-			font-size: rem(50px);
-		}
-		&__col:nth-child(4) &__title{
-			font-size: rem(40px);
-
-		}
-		&__col:nth-child(5) &__title{
-			font-size: rem(30px);
-
-		}
-		&__col{
-			margin-bottom: rem(50);
+		 
+				z-index: -1; 
+			}
 		}
 
 		p{
 			 font-size: $h4-font-size;
 			 font-weight: 500;
-			line-height: 130%;
+			line-height: 140%;
+			strong{
+				color: $primary;
+				@include rfs(30px);
+				display: inline-block;
+			}
 			/* or 36px */
 
 			letter-spacing: 0.015em;
@@ -86,6 +80,26 @@
 			color: #5D6773;
 
 		}
+	 
+
+ 
+			&__img-wrap{
+				position: relative;
+				max-width: rem(630);
+				height: rem(500);
+				picture{
+					position: absolute;
+					&:nth-child(1){
+						left: rem(-50);
+						top: rem(-100);
+					}
+					&:nth-child(3){
+						right: rem(-100);
+						bottom: rem(-80);
+						width: rem(370);
+					}
+				}
+				}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
@@ -96,4 +110,9 @@
 	@include media-breakpoint-only(xl) {}
 	//
 	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(sm) {
+		picture{
+			display: none;
+		}
+	}
 } // end.sPrizes

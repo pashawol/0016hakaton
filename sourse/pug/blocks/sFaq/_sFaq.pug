@@ -1,0 +1,12 @@
+mixin sFaq(data)
+	// start sFaq
+	+b.sFaq.section.pt-0#sFaq&attributes(attributes)
+		.container 
+			mixin item(t)
+				+b.accordion--js
+					+e.head!= t
+					+e.body
+						block
+						
+
+	// end sFaq
