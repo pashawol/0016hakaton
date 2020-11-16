@@ -29,6 +29,27 @@
 		<link rel="preload" href="fonts/Gilroy-SemiBoldItalic.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
 		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
+		<script>
+			(function (w, d, u, i, o, s, p) {
+				if (d.getElementById(i)) {
+					return;
+				}
+				w['MangoObject'] = o;
+				w[o] = w[o] || function () {
+					(w[o].q = w[o].q || []).push(arguments)
+				};
+				w[o].u = u;
+				w[o].t = 1 * new Date();
+				s = d.createElement('script');
+				s.async = 1;
+				s.id = i;
+				s.src = u;
+				s.charset = 'utf-8';
+				p = d.getElementsByTagName('script')[0];
+				p.parentNode.insertBefore(s, p);
+				}(window, document, '//widgets.mango-office.ru/widgets/mango.js', 'mango-js', 'mgo'));
+				mgo({multichannel: {id: 8329}});
+		</script>
 	</head>
 	<body class="loaded_hiding">
 		<div class="main-wrapper">
