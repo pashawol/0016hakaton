@@ -161,6 +161,8 @@ const JSCCommon = {
 					$('#confirmTitle').text("Заявка успешно подтверждена!")
 					$('#confirmDescription').html('Вы прошли первый этап регистрации на Интеллектуальный конкурс "Хакатон идей".<br/>' +
 						'Ссылку для регистрации на платформе, где пройдет Конкурс, мы позже вышдем Вам на почту, указанную в заявке на участие.')
+					$('#confirmButton').text("Перейти в чат");
+					$('#confirmButton').attr("href", "https://t.me/joinchat/DZs6tUVcVQnJ4wEVDjQUOg");
 				});
 			}).fail(function () {
 				$( document ).ready(function() {
