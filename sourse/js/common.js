@@ -356,6 +356,9 @@ function eventHandler() {
 			document.body.classList.remove('loaded_hiding');
 		}, 500);
 	}
+	$(".accordion--js ").on('click', '.accordion__head', function () {
+		$(this).toggleClass('active').next().slideToggle();
+	})
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

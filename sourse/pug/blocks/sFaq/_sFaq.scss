@@ -1,6 +1,51 @@
 
 	// start .sFaq
 	.sFaq {
+		&__wrap{
+			max-width: rem(800);
+			position: relative;
+		}
+		&__icon-wrap{
+			position: absolute;
+			left: 100%;
+			top: rem(-150);
+			z-index: 2;
+			width: rem(635);
+			height: rem(730);
+			img{
+				@extend .res-i;
+				position: relative;
+				z-index: 2;
+			}
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				filter: blur(51px);
+				z-index: -1;
+				border-radius: 50%;
+			}
+
+			&::before {
+				width: rem(450);
+				height: rem(450);
+				background: conic-gradient(from 167.69deg at 50% 50%, #FC4646 0deg, #FFB800 360deg);
+				filter: blur(12.627px);
+				bottom: rem(50);
+				right: rem(50);
+				animation: blinkingText 3.8s infinite;
+			}
+			
+			&::after {
+				left: rem(60);
+				top: rem(60);
+				width: rem(300);
+				height: rem(300);
+				background: conic-gradient(from 167.69deg at 50% 50%, #54C8ED 0deg, #0AA1D1 360deg);
+				filter: blur(12.627px);
+				animation: blinkingText 3.2s infinite;
+			}
+		}
 		 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
@@ -13,3 +58,66 @@
 	//
 	@include media-breakpoint-down(xl) {}
 } // end.sFaq
+
+.accordion{
+		--deg: #{90deg};
+
+	
+	&__head{
+		position: relative;
+		display: flex;
+		align-items: center;
+		margin-bottom: rem(35);
+		cursor: pointer;
+		@extend .h4;
+			&.active {
+				--deg: 0;
+
+			}
+		&:hover{
+			color: $primary;
+			@include mt;
+		}
+		// font-weight: normal;
+		&::before{
+			content: '';
+			flex:  0 0 auto;
+			width: rem(45);
+			height: rem(46);
+			background-image: url(../img/svg/circle-faq.svg);
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center center;
+			@include media-breakpoint-up(sm) {
+
+				margin-right: rem(37);
+			}
+			margin-right: rem(15);
+		}
+	
+	} 
+
+	&__plus{
+		position: relative;
+		width: rem(35);
+		height: rem(35);
+		margin-left: auto;
+		flex: 0 0 auto;
+		&::before,
+		&::after{
+			content: '';
+			@include a-cent;
+			height: 4px;
+			background-color: #5d6773;
+			width: 100%;
+		}
+		&::after{
+			@include mt;
+			transform: rotate(var(--deg));
+		}
+	 
+	}
+	&__body{
+		display: none;
+	}
+}
