@@ -148,6 +148,46 @@ const JSCCommon = {
 		Inputmask("+9(999)999-99-99").mask(InputTel);
 	},
 
+	loadFaq() {
+		if (window.location.href.includes('faq')) {
+			$.getJSON("/mock/faq.json", function(faq) {
+				console.log(faq);
+				$( document ).ready(function() {
+					let html = '';
+					faq[0].articles.forEach(article => {
+						html = html + `<div class="accordion accordion--js ">` +
+							`<div class="accordion__head">${article.question}` +
+							`<div class="accordion__plus">\n` +
+							`</div>\n` +
+							`</div>\n` +
+							`<div class="accordion__body">\n` +
+							`${article.answer}` +
+							`</div>\n` +
+							`</div>`
+					})
+					$('#faqContainer').html(html);
+					$(".accordion--js ").on('click', '.accordion__head', function () {
+						$(this).toggleClass('active').next().slideToggle();
+					})
+				});
+			});
+		}
+		// const API_BASE = 'https://ideahack.ru/api/v1/'
+		// $.ajax({
+		// 	url: API_BASE + 'faq',
+		// 	type: 'GET'
+		// }).done(function (response) {
+		// 	$( document ).ready(function() {
+		//
+		// 	});
+		// }).fail(function () {
+		// 	$( document ).ready(function() {
+		// 		faq
+		// 	});
+		// });
+	},
+
+
 	confirmClaim() {
 		const API_BASE = 'https://ideahack.ru/api/v1/'
 
@@ -272,6 +312,8 @@ function eventHandler() {
 	JSCCommon.inputMask(); 
 	JSCCommon.heightwindow();
 	JSCCommon.animateScroll();
+	JSCCommon.loadFaq();
+
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect

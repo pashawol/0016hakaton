@@ -167,6 +167,36 @@ var JSCCommon = {
 		});
 		Inputmask("+9(999)999-99-99").mask(InputTel);
 	},
+	loadFaq: function loadFaq() {
+		if (window.location.href.includes('faq')) {
+			$.getJSON("/mock/faq.json", function (faq) {
+				console.log(faq);
+				$(document).ready(function () {
+					var html = '';
+					faq[0].articles.forEach(function (article) {
+						html = html + "<div class=\"accordion accordion--js \">" + "<div class=\"accordion__head\">".concat(article.question) + "<div class=\"accordion__plus\">\n" + "</div>\n" + "</div>\n" + "<div class=\"accordion__body\">\n" + "".concat(article.answer) + "</div>\n" + "</div>";
+					});
+					$('#faqContainer').html(html);
+					$(".accordion--js ").on('click', '.accordion__head', function () {
+						$(this).toggleClass('active').next().slideToggle();
+					});
+				});
+			});
+		} // const API_BASE = 'https://ideahack.ru/api/v1/'
+		// $.ajax({
+		// 	url: API_BASE + 'faq',
+		// 	type: 'GET'
+		// }).done(function (response) {
+		// 	$( document ).ready(function() {
+		//
+		// 	});
+		// }).fail(function () {
+		// 	$( document ).ready(function() {
+		// 		faq
+		// 	});
+		// });
+
+	},
 	confirmClaim: function confirmClaim() {
 		var API_BASE = 'https://ideahack.ru/api/v1/';
 
@@ -291,7 +321,8 @@ function eventHandler() {
 	JSCCommon.sendForm();
 	JSCCommon.inputMask();
 	JSCCommon.heightwindow();
-	JSCCommon.animateScroll(); // JSCCommon.CustomInputFile();
+	JSCCommon.animateScroll();
+	JSCCommon.loadFaq(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 	// var x = window.location.host;
 	// let screenName;
