@@ -3,15 +3,15 @@ mixin sPrizes(data)
 	+b.SECTION.sPrizes.section#sPrizes&attributes(attributes)
 		.container
 			+b.section-title
-				h2 Призы:
+				h2 Возможности получить:
 			.row
 				.col-xl-6
 					mixin item(p)
 						+e.col
 							p!= p
-					+item(`Финансовая поддержка  <strong>до&nbsp;1&nbsp;500&nbsp;000 рублей</strong>  на&nbsp;реализацию <br> лучших проектов`)
-					+item(`Возможность  <strong>пройти стажировку</strong>  в&nbsp;Федеральном агентстве  по&nbsp;делам молодежи`)
-					+item(`Забрать <br> <strong>мерч от&nbsp;Хакатона Идей</strong>`)
+					+item(`<strong>Финансовую поддержку </strong><br>  лучших проектов <br> до 1 500 000 рублей`)
+					+item(`<strong>Стажировку </strong> в Федеральном агентстве <br> по делам молодежи`)
+					+item(`<strong>Мерч </strong> от Хакатона Идей`)
 				.col-xl-6
 					+e.img-wrap
 						+pic('bottle_mockup_02.png')
