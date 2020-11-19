@@ -1,0 +1,29 @@
+User-agent: Yandex
+Disallow: /сss/
+Disallow: /documents/
+Disallow: /fonts/
+Disallow: /img/
+Disallow: /js/
+Disallow: /libs/
+Disallow: /mock/
+Disallow: /screen/
+
+User-agent: Googlebot
+Disallow: /сss/
+Disallow: /documents/
+Disallow: /fonts/
+Disallow: /img/
+Disallow: /js/
+Disallow: /libs/
+Disallow: /mock/
+Disallow: /screen/
+
+User-agent: *
+Disallow: /сss/
+Disallow: /documents/
+Disallow: /fonts/
+Disallow: /img/
+Disallow: /js/
+Disallow: /libs/
+Disallow: /mock/
+Disallow: /screen/
