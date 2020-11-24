@@ -221,7 +221,7 @@ var JSCCommon = {
 		}
 	},
 	sendForm: function sendForm() {
-		var API_BASE = 'http://127.0.0.1:5000/api/v1/';
+		var API_BASE = 'https://ideahack.ru/api/v1/';
 
 		var dictCopy = function dictCopy(dict, copyFields) {
 			var result = {};
