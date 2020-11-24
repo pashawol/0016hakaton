@@ -371,6 +371,18 @@ function eventHandler() {
 
 		}
 	}));
+	swiper4.on('slideChange', function () {
+		window.location.href = window.location.origin + '#sCases/case/' + swiper4.activeIndex;
+	});
+
+	if (window.location.href.includes('/case/')) {
+		$(document).ready(function () {
+			var splitHref = window.location.href.split('/');
+			swiper4.slideTo(parseInt(splitHref[splitHref.length - 1]));
+			swiper4.update();
+		});
+	}
+
 	var swiper5 = new Swiper('.slider-line--js', {
 		// slidesPerView: 5,
 		// ...defaultSl,
