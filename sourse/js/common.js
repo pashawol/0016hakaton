@@ -148,6 +148,46 @@ const JSCCommon = {
 		Inputmask("+9(999)999-99-99").mask(InputTel);
 	},
 
+	loadFaq() {
+		if (window.location.href.includes('faq')) {
+			$.getJSON("/mock/faq.json", function(faq) {
+				console.log(faq);
+				$( document ).ready(function() {
+					let html = '';
+					faq[0].articles.forEach(article => {
+						html = html + `<div class="accordion accordion--js ">` +
+							`<div class="accordion__head">${article.question}` +
+							`<div class="accordion__plus">\n` +
+							`</div>\n` +
+							`</div>\n` +
+							`<div class="accordion__body">\n` +
+							`${article.answer}` +
+							`</div>\n` +
+							`</div>`
+					})
+					$('#faqContainer').html(html);
+					$(".accordion--js ").on('click', '.accordion__head', function () {
+						$(this).toggleClass('active').next().slideToggle();
+					})
+				});
+			});
+		}
+		// const API_BASE = 'https://ideahack.ru/api/v1/'
+		// $.ajax({
+		// 	url: API_BASE + 'faq',
+		// 	type: 'GET'
+		// }).done(function (response) {
+		// 	$( document ).ready(function() {
+		//
+		// 	});
+		// }).fail(function () {
+		// 	$( document ).ready(function() {
+		// 		faq
+		// 	});
+		// });
+	},
+
+
 	confirmClaim() {
 		const API_BASE = 'https://ideahack.ru/api/v1/'
 
@@ -159,8 +199,8 @@ const JSCCommon = {
 			}).done(function (response) {
 				$( document ).ready(function() {
 					$('#confirmTitle').text("Заявка успешно подтверждена!")
-					$('#confirmDescription').html('Вы прошли первый этап регистрации на Интеллектуальный конкурс "Хакатон идей".<br/>' +
-						'Ссылку для регистрации на платформе, где пройдет Конкурс, мы позже вышдем Вам на почту, указанную в заявке на участие.')
+					$('#confirmDescription').html('Вы прошли первый этап регистрации на Интеллектуальный конкурс "Хакатон Идей".<br/>' +
+						'Ссылку для регистрации на платформе, где пройдет Конкурс, мы позже вышлем Вам на почту, указанную в заявке на участие.')
 					$('#confirmButton').text("Перейти в чат");
 					$('#confirmButton').attr("href", "https://t.me/joinchat/DZs6tUVcVQnJ4wEVDjQUOg");
 				});
@@ -195,9 +235,10 @@ const JSCCommon = {
 			});
 			data['name'] = data['fname']
 			data['surname'] = data['lname']
+			data['has_team'] = data['has_team'] === 'on'
 			data['confirm_url'] = window.location.origin + '/confirmation.html'
 			data = dictCopy(data, ['name', 'surname', 'patronymic', 'telegram', 'phone', 'email', 'city',
-				'confirm_url'])
+				'confirm_url', 'has_team'])
 			$.ajax({
 				contentType: 'application/json',
 				url: API_BASE + 'claim',
@@ -272,6 +313,8 @@ function eventHandler() {
 	JSCCommon.inputMask(); 
 	JSCCommon.heightwindow();
 	JSCCommon.animateScroll();
+	JSCCommon.loadFaq();
+
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
@@ -328,8 +371,19 @@ function eventHandler() {
 			// 	return '<span class="' + className + '">' + (index + 1) + '</span>';
 			// }
 		},
-
 	});
+	swiper4.on('slideChange', function () {
+		window.location.href = window.location.origin + '#sCases/case/' + swiper4.activeIndex;
+	});
+
+	if (window.location.href.includes('/case/')) {
+		$( document ).ready(function() {
+			const splitHref = window.location.href.split('/')
+			swiper4.slideTo(parseInt(splitHref[splitHref.length - 1]));
+			swiper4.update();
+		});
+	}
+
 	const swiper5 = new Swiper('.slider-line--js', {
 		// slidesPerView: 5,
 		// ...defaultSl,

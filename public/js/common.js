@@ -167,6 +167,36 @@ var JSCCommon = {
 		});
 		Inputmask("+9(999)999-99-99").mask(InputTel);
 	},
+	loadFaq: function loadFaq() {
+		if (window.location.href.includes('faq')) {
+			$.getJSON("/mock/faq.json", function (faq) {
+				console.log(faq);
+				$(document).ready(function () {
+					var html = '';
+					faq[0].articles.forEach(function (article) {
+						html = html + "<div class=\"accordion accordion--js \">" + "<div class=\"accordion__head\">".concat(article.question) + "<div class=\"accordion__plus\">\n" + "</div>\n" + "</div>\n" + "<div class=\"accordion__body\">\n" + "".concat(article.answer) + "</div>\n" + "</div>";
+					});
+					$('#faqContainer').html(html);
+					$(".accordion--js ").on('click', '.accordion__head', function () {
+						$(this).toggleClass('active').next().slideToggle();
+					});
+				});
+			});
+		} // const API_BASE = 'https://ideahack.ru/api/v1/'
+		// $.ajax({
+		// 	url: API_BASE + 'faq',
+		// 	type: 'GET'
+		// }).done(function (response) {
+		// 	$( document ).ready(function() {
+		//
+		// 	});
+		// }).fail(function () {
+		// 	$( document ).ready(function() {
+		// 		faq
+		// 	});
+		// });
+
+	},
 	confirmClaim: function confirmClaim() {
 		var API_BASE = 'https://ideahack.ru/api/v1/';
 
@@ -178,7 +208,7 @@ var JSCCommon = {
 			}).done(function (response) {
 				$(document).ready(function () {
 					$('#confirmTitle').text("Заявка успешно подтверждена!");
-					$('#confirmDescription').html('Вы прошли первый этап регистрации на Интеллектуальный конкурс "Хакатон идей".<br/>' + 'Ссылку для регистрации на платформе, где пройдет Конкурс, мы позже вышдем Вам на почту, указанную в заявке на участие.');
+					$('#confirmDescription').html('Вы прошли первый этап регистрации на Интеллектуальный конкурс "Хакатон Идей".<br/>' + 'Ссылку для регистрации на платформе, где пройдет Конкурс, мы позже вышлем Вам на почту, указанную в заявке на участие.');
 					$('#confirmButton').text("Перейти в чат");
 					$('#confirmButton').attr("href", "https://t.me/joinchat/DZs6tUVcVQnJ4wEVDjQUOg");
 				});
@@ -217,8 +247,9 @@ var JSCCommon = {
 			});
 			data['name'] = data['fname'];
 			data['surname'] = data['lname'];
+			data['has_team'] = data['has_team'] === 'on';
 			data['confirm_url'] = window.location.origin + '/confirmation.html';
-			data = dictCopy(data, ['name', 'surname', 'patronymic', 'telegram', 'phone', 'email', 'city', 'confirm_url']);
+			data = dictCopy(data, ['name', 'surname', 'patronymic', 'telegram', 'phone', 'email', 'city', 'confirm_url', 'has_team']);
 			$.ajax({
 				contentType: 'application/json',
 				url: API_BASE + 'claim',
@@ -291,7 +322,8 @@ function eventHandler() {
 	JSCCommon.sendForm();
 	JSCCommon.inputMask();
 	JSCCommon.heightwindow();
-	JSCCommon.animateScroll(); // JSCCommon.CustomInputFile();
+	JSCCommon.animateScroll();
+	JSCCommon.loadFaq(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 	// var x = window.location.host;
 	// let screenName;
@@ -340,6 +372,18 @@ function eventHandler() {
 
 		}
 	}));
+	swiper4.on('slideChange', function () {
+		window.location.href = window.location.origin + '#sCases/case/' + swiper4.activeIndex;
+	});
+
+	if (window.location.href.includes('/case/')) {
+		$(document).ready(function () {
+			var splitHref = window.location.href.split('/');
+			swiper4.slideTo(parseInt(splitHref[splitHref.length - 1]));
+			swiper4.update();
+		});
+	}
+
 	var swiper5 = new Swiper('.slider-line--js', {
 		// slidesPerView: 5,
 		// ...defaultSl,

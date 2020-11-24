@@ -89,7 +89,7 @@ mixin in-c(typ="checkbox", text, name= typ, required= false )
 		if block
 			block 
 		else
-			+e.SPAN.text= text
+			+e.SPAN.text.small= text
  
 mixin add-file(n)
 	+b.add-file

@@ -15,11 +15,26 @@ include ../../blocks/sForm/_sForm.pug
 doctype html
 html(lang="ru")
 	head
+		script.
+			(function (w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({
+					"gtm.start":
+							new Date().getTime(), event: "gtm.js"
+				});
+				var f = d.getElementsByTagName(s)[0],
+						j = d.createElement(s), dl = l != "dataLayer" ? "&l=" + l : "";
+				j.async = true;
+				j.src =
+						"https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, "script", "dataLayer", "GTM-5S3NCVQ");
+
 		meta(charset="utf-8")
 
 		block title
 			title title
-		meta(name="description", content="о чем страница")
+		meta(name="description", content="48 часов интенсивной командной работы ONLINE. Реальные решения, актуальные для молодежи здесь и сейчас")
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
 		meta(name="viewport", content="width=device-width, shrink-to-fit=no")
 		//- meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no,  shrink-to-fit=no")
@@ -28,14 +43,15 @@ html(lang="ru")
 		<meta name="format-detection" content="telephone=no">
 		link(rel="image_src" href="http://genrif.ru/assets/i/soc-logo.png" )
 		meta( property="og:type" content="website")
-		meta( property="og:site_name" content="content")
-		meta( property="og:title" content="content")
-		meta( property="og:description" content="content")
-		meta( property="og:url" content="content")
+		meta( property="og:site_name" content="Хакатон Идей")
+		meta( property="og:title" content='Интеллектуальный конкурс "Хакатон Идей"')
+		meta( property="og:description" content="48 часов интенсивной командной работы ONLINE. Реальные решения, актуальные для молодежи здесь и сейчас")
+		meta( property="og:url" content="https://ideahack.ru/")
 		meta( property="og:locale" content="ru_RU")
-		meta( property="og:image" content='path/to/image.jpg')
-		meta( property="og:image:width" content="968")
-		meta( property="og:image:height" content="504")
+		meta( property="og:image" content='img/favicon/favicon.ico')
+
+		meta( name="yandex-verification" content="1b6b00d2364322b4")
+		meta( name="google-site-verification" content="_Ly6c2nX67Uwh8QNrU1UoKGFCphGtUqiW3cqU48SKSM")
 
 		// Custom Browsers Color
 		meta(name='theme-color', content='var(--bg-primary')
@@ -60,12 +76,34 @@ html(lang="ru")
 				p.parentNode.insertBefore(s, p);
 				}(window, document, '//widgets.mango-office.ru/widgets/mango.js', 'mango-js', 'mgo'));
 				mgo({multichannel: {id: 8329}});
+
+
+		script.
+			(function(m,e,t,r,i,k,a){m[i]=m[i] || function () {
+				(m[i].a = m[i].a || []).push(arguments)
+			};
+				m[i].l=1 * new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+			ym(69502081, "init", {
+			clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true,
+				webvisor:true
+				});
+
+
+
+
 	block variables
 	body.loaded_hiding(class= mainPage)
+		noscript
+			div
+				img(src="https://mc.yandex.ru/watch/69502081" style="position:absolute; left:-9999px;" alt="")
+		noscript
+			iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-5S3NCVQ" height="0" width="0" style="display:none;visibility:hidden")
+
 		.main-wrapper
 			block pagecontent
 				h3 content
 		+modal()
 		+allcjs()
-		
-		
