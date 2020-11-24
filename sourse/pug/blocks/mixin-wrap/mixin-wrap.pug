@@ -43,9 +43,6 @@ mixin reg(b="Отправить")
 			.col-lg-6
 				+input("",'text','Имя', 'fname')(required class="form-control-sm")
 			.col-lg-6
-				+input("",'text','Отчество', 'patronymic')(class="form-control-sm")
-					+e.smallest При наличии
-			.col-lg-6
 				+input("",'text','Аккаунт в Telegram', 'telegram')(class="form-control-sm")
 					+e.smallest Необязательно
 			.col-lg-6
@@ -54,12 +51,14 @@ mixin reg(b="Отправить")
 				+input("",'email','E-mail', 'email')(required class="form-control-sm")
 			.col-lg-6
 				+input("",'text','Город', 'city')(required class="form-control-sm")
-			.w-100 
+			.col-lg-6.align-self-center
+				+in-c("checkbox", "Есть команда", "has_team")
+			.w-100
 			.col-lg-6
 				button.btn.btn-outline-gradient.w-100.mb-4(type="submit")= b
 			.col-lg-6.align-self-center
 					+in-c()(required checked)
-						+e.SPAN.text.small Соглашаюсь на обработку  #[a.text-warning(href="#") персональных данных] 
+						+e.SPAN.text.small Соглашаюсь на обработку персональных данных
 
 
 mixin login(b="Зарегистрироваться")

@@ -215,7 +215,7 @@ const JSCCommon = {
 	},
 
 	sendForm() {
-		const API_BASE = 'https://ideahack.ru/api/v1/'
+		const API_BASE = 'http://127.0.0.1:5000/api/v1/'
 
 		const dictCopy = (dict, copyFields) => {
 			const result = {};
@@ -235,9 +235,10 @@ const JSCCommon = {
 			});
 			data['name'] = data['fname']
 			data['surname'] = data['lname']
+			data['has_team'] = data['has_team'] === 'on'
 			data['confirm_url'] = window.location.origin + '/confirmation.html'
 			data = dictCopy(data, ['name', 'surname', 'patronymic', 'telegram', 'phone', 'email', 'city',
-				'confirm_url'])
+				'confirm_url', 'has_team'])
 			$.ajax({
 				contentType: 'application/json',
 				url: API_BASE + 'claim',
