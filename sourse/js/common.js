@@ -215,7 +215,7 @@ const JSCCommon = {
 	},
 
 	sendForm() {
-		const API_BASE = 'http://127.0.0.1:5000/api/v1/'
+		const API_BASE = 'https://ideahack.ru/api/v1/'
 
 		const dictCopy = (dict, copyFields) => {
 			const result = {};
