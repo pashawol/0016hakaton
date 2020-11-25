@@ -6,24 +6,19 @@ mixin headerBlock()
 		+marquee.text-2
 		.container
 			+e.text-block
-				+e.date 	11-13 декабря
 				h1    
-					span.z--2
-						+e.STRONG.circle.border-warning   
-						+e.STRONG.circle.border-primary
-						| Идея 
-						| Дизай
-					span.z--1 н 
-					span.z--2
-						| Продукт
+					span.z--2 
+						| Хакат#[+e.STRONG.circle.border-warning]н Идей 
+				P Интеллектуальный <br> online-конкурс для молодежи
+				+e.date 	11-13 декабря
+				+e.btn(href="/registration.html") Зарегистрироваться
+					i
 				+e.img-wrap
 					+pic('malecula.png')
 					+e.gradient-circle
 						+ellipses()
-			.row.align-items-center
-				.col-lg-6
-					p 48 часов интенсивной командной работы  #[em.strong  ONLINE =] реальные решения, актуальные для молодежи #[strong здесь и сейчас]
-				.col
-					+e.btn(href="/registration.html") Зарегистрироваться
-						i
+			//- .row.align-items-center
+			//- 	.col-lg-6
+			//- 		p 48 часов интенсивной командной работы  #[em.strong  ONLINE =] реальные решения, актуальные для молодежи #[strong здесь и сейчас]
+			//- 	.col
 	// end headerBlock

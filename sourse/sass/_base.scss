@@ -35,13 +35,16 @@ body {
 	min-width: 320px;  
 	letter-spacing: 0.015em;
 	position: relative; 
-	@include mt;
 	&.loaded_hiding{
-
+		@include mt(.1);
+		&::before{
+			display: none;
+		}
 		opacity: 0;
 		pointer-events: none;
 	}
 	.loaded{
+		@include mt(0);
 		pointer-events: visible;
 		opacity: 1;
 	}
@@ -534,4 +537,9 @@ iframe {
 .footer_icon {
 	height: 35px;
 	width: 35px;
+}
+
+.btn-block{
+	display: block;
+	width: 100%;
 }

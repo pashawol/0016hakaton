@@ -94,7 +94,8 @@
 		 @extend .btn;
 		 @extend .btn-lg;
 		 @extend .btn-primary;
-		 @extend .btn-block; 
+		 display: block;
+		 width: 100%;
  	}
 	 textarea{
 		 min-height: 10em;

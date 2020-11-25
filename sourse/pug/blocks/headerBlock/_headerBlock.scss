@@ -17,36 +17,41 @@
 			}
 			@include media-breakpoint-up(lg) {
 				
-				text-align: right;
+				// text-align: right;
 					max-width: rem(540);
 				}
 			position: relative;
 		}
 
 		&__date {
-			@extend .h3;
+			@extend .h4;
 			line-height: 110.8%;
 			letter-spacing: 0.015em;
 			background-color: $primary;
+			color: #ffffff;
 			display: inline-block;
-			padding: rem(6) rem(10);
-			text-transform: uppercase;
+			padding: rem(10) rem(16);
+			font-weight: bold;
+			// text-transform: uppercase;
 			margin-bottom: 0;
+			margin-bottom: rem(68);
+			position: relative;
+			z-index: 4;
 		}
 	h1{
 		margin-top: em(-1); 
-		@include rfs(120.827px);
+		@include rfs(94.827px);
 		// font-size: 145.827px;
 		line-height: 110.8%; 
 		letter-spacing: 0.015em;
 		text-transform: uppercase;
-		max-width: em(86);
+		max-width: em(96);
 		text-align: left;
 		vertical-align: middle;
-			@include media-breakpoint-up(lg){
+			// @include media-breakpoint-up(lg){
 
-				margin-left: auto;
-			}
+			// 	margin-left: auto;
+			// }
 	}
 			&__circle{
 				display: inline-block;
@@ -54,16 +59,16 @@
 				width: var(--size);
 				height: var(--size);
 				border-radius: 50%;
-				border: 5px solid  ;
-				margin-right: em(1);
+				border: 5px solid  ; 
 				position: relative;
-				&.border-warning{
-					margin-right: em(6);
-					--size: #{em(12.427)};
-					margin-left: em(5);
+				margin-left: em(1);
+				margin-right: em(1);
+				z-index: -1;
+				&.border-warning{ 
+					--size: #{em(13.427)}; 
 					&::before{
 						content: '';
-						--size: #{em(18.427)};
+						--size: #{em(20.427)};
 						width: var(--size);
 						height: var(--size);
 						background-image: url(../img/svg/text-circle.svg);
@@ -109,7 +114,17 @@
 		 			}
 		 		}
 		 	}
+p{
+	@include rfs(29px);
+	font-weight: 500;
+	letter-spacing: 0.015em;
+	position: relative;
+	z-index: 4;
 
+	/* 2 */
+
+	color: #5D6773;
+}
 &__gradient-circle{
 	position: absolute;
 	--size: #{rem(236)};
@@ -164,7 +179,7 @@
 		 min-width: calc(100% + #{rem(140)});
 		 @include media-breakpoint-up(xl) {
 
-			 top: rem(500);
+			 top: rem(600);
 			}
 			 	@include media-breakpoint-up(lg){
 
@@ -189,7 +204,7 @@
 		 min-width: calc(100% + #{rem(100)});
 		 @include media-breakpoint-up(xl) {
 
-			 top: rem(290);
+			 top: rem(155);
 			}
 			 	@include media-breakpoint-up(sm) {
 					 top: rem(190);
@@ -215,13 +230,16 @@
 		 }
 	 }
 	 &__btn{
+		 width: 100%;
 		 width: rem(304);
-		 @extend .btn;
-		 @extend .btn-block;
+		 @extend .btn; 
+		 display: block;
+		 position: relative;
+		 z-index: 4;
 		 @extend .btn-outline-gradient;
 		 
-		 margin-left: auto;
-		 margin-right: auto;
+		//  margin-left: auto;
+		//  margin-right: auto;
 	 }
 
 	@include media-breakpoint-up(xl) {}

@@ -125,7 +125,7 @@ const JSCCommon = {
 					siblingsContent.classList.remove('active')
 					element.classList.add('active');
 					tabs.Content[index].classList.add('active');
-				} 
+				}
 			})
 		})
 		// $('.' + tab + '__caption').on('click', '.' + tab + '__btn:not(.active)', function (e) {
@@ -150,9 +150,9 @@ const JSCCommon = {
 
 	loadFaq() {
 		if (window.location.href.includes('faq')) {
-			$.getJSON("/mock/faq.json", function(faq) {
+			$.getJSON("/mock/faq.json", function (faq) {
 				console.log(faq);
-				$( document ).ready(function() {
+				$(document).ready(function () {
 					let html = '';
 					faq[0].articles.forEach(article => {
 						html = html + `<div class="accordion accordion--js ">` +
@@ -197,7 +197,7 @@ const JSCCommon = {
 				url: API_BASE + 'claim/confirm' + window.location.search,
 				type: 'POST'
 			}).done(function (response) {
-				$( document ).ready(function() {
+				$(document).ready(function () {
 					$('#confirmTitle').text("Заявка успешно подтверждена!")
 					$('#confirmDescription').html('Вы прошли первый этап регистрации на Интеллектуальный конкурс "Хакатон Идей".<br/>' +
 						'Ссылку для регистрации на платформе, где пройдет Конкурс, мы позже вышлем Вам на почту, указанную в заявке на участие.')
@@ -205,7 +205,7 @@ const JSCCommon = {
 					$('#confirmButton').attr("href", "https://t.me/joinchat/DZs6tUVcVQnJ4wEVDjQUOg");
 				});
 			}).fail(function () {
-				$( document ).ready(function() {
+				$(document).ready(function () {
 					$('#confirmTitle').text("Ошибка подтверждения заявки")
 					$('#confirmDescription').html("Ссылка больше не действительна. Попробуйте отправить ссылку повторно.<br/> " +
 						"В случае проблем, пожалуйста, обратитесь в службу поддержки.")
@@ -270,7 +270,7 @@ const JSCCommon = {
 
 		}
 	},
- 
+
 	heightwindow() {
 		// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
 		let vh = window.innerHeight * 0.01;
@@ -298,8 +298,8 @@ const JSCCommon = {
 	getCurrentYear(el) {
 		let now = new Date();
 		let currentYear = document.querySelector(el);
-		if (currentYear) currentYear.innerText = now.getFullYear(); 
-		}
+		if (currentYear) currentYear.innerText = now.getFullYear();
+	}
 };
 const $ = jQuery;
 
@@ -310,7 +310,7 @@ function eventHandler() {
 	JSCCommon.mobileMenu();
 	JSCCommon.confirmClaim();
 	JSCCommon.sendForm();
-	JSCCommon.inputMask(); 
+	JSCCommon.inputMask();
 	JSCCommon.heightwindow();
 	JSCCommon.animateScroll();
 	JSCCommon.loadFaq();
@@ -349,19 +349,19 @@ function eventHandler() {
 		spaceBetween: 0,
 		lazy: {
 			loadPrevNext: true,
-		}, 
+		},
 		loop: true,
 		// navigation: {
 		// 	nextEl: '.swiper-button-next',
 		// 	prevEl: '.swiper-button-prev',
 		// },
-		
+
 	}
 
 	const swiper4 = new Swiper('.sCases__slider--js', {
 		// slidesPerView: 5,
 		...defaultSl,
-		slidesPerView: 1, 
+		slidesPerView: 1,
 		watchOverflow: true,
 		pagination: {
 			el: ' .swiper-pagination',
@@ -377,7 +377,7 @@ function eventHandler() {
 	});
 
 	if (window.location.href.includes('/case/')) {
-		$( document ).ready(function() {
+		$(document).ready(function () {
 			const splitHref = window.location.href.split('/')
 			swiper4.slideTo(parseInt(splitHref[splitHref.length - 1]));
 			swiper4.update();
@@ -387,28 +387,28 @@ function eventHandler() {
 	const swiper5 = new Swiper('.slider-line--js', {
 		// slidesPerView: 5,
 		// ...defaultSl,
-		slidesPerView: 'auto', 
-		speed:15000,
+		slidesPerView: 'auto',
+		speed: 15000,
 		loop: true,
 		allowTouchMove: false, // можно ещё отключить свайп
 		autoplay: {
 			delay: 0,
 			disableOnInteraction: false // или сделать так, чтобы восстанавливался autoplay после взаимодействия
-		}, 
+		},
 	});
- 
+
 	// modal window
 
 	$("marquee .marquee-inner").each(function () {
-		let html = $(this).html(); 
-		$(this).html(html.repeat(100) )
+		let html = $(this).html();
+		$(this).html(html.repeat(100))
 	})
 	window.onload = function () {
 		document.body.classList.add('loaded_hiding');
 		window.setTimeout(function () {
 			document.body.classList.add('loaded');
 			document.body.classList.remove('loaded_hiding');
-		}, 500);
+		}, 100);
 	}
 	$(".accordion--js ").on('click', '.accordion__head', function () {
 		$(this).toggleClass('active').next().slideToggle();

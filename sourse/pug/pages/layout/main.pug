@@ -38,20 +38,20 @@ html(lang="ru")
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
 		meta(name="viewport", content="width=device-width, shrink-to-fit=no")
 		//- meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no,  shrink-to-fit=no")
-		meta(name="viewport" content="width=device-width, shrink-to-fit=no")
-		link(rel='shortcut icon',   type="image/png",  href='img/favicon/favicon.ico')
+		meta(name="viewport", content="width=device-width, shrink-to-fit=no")
+		link(type="image/png", href='img/favicon/favicon.ico', rel='shortcut icon')
 		<meta name="format-detection" content="telephone=no">
-		link(rel="image_src" href="http://genrif.ru/assets/i/soc-logo.png" )
-		meta( property="og:type" content="website")
-		meta( property="og:site_name" content="Хакатон Идей")
-		meta( property="og:title" content='Интеллектуальный конкурс "Хакатон Идей"')
-		meta( property="og:description" content="48 часов интенсивной командной работы ONLINE. Реальные решения, актуальные для молодежи здесь и сейчас")
-		meta( property="og:url" content="https://ideahack.ru/")
-		meta( property="og:locale" content="ru_RU")
-		meta( property="og:image" content='img/favicon/favicon.ico')
+		link(href="http://genrif.ru/assets/i/soc-logo.png" rel="image_src")
+		meta(property="og:type" content="website")
+		meta(property="og:site_name" content="Хакатон Идей")
+		meta(property="og:title" content='Интеллектуальный конкурс "Хакатон Идей"')
+		meta(property="og:description", content="48 часов интенсивной командной работы ONLINE. Реальные решения, актуальные для молодежи здесь и сейчас")
+		meta(property="og:url" content="https://ideahack.ru/")
+		meta(property="og:locale" content="ru_RU")
+		meta(property="og:image" content='img/favicon/favicon.ico')
 
-		meta( name="yandex-verification" content="1b6b00d2364322b4")
-		meta( name="google-site-verification" content="_Ly6c2nX67Uwh8QNrU1UoKGFCphGtUqiW3cqU48SKSM")
+		meta(name="yandex-verification" content="1b6b00d2364322b4")
+		meta(name="google-site-verification" content="_Ly6c2nX67Uwh8QNrU1UoKGFCphGtUqiW3cqU48SKSM")
 
 		// Custom Browsers Color
 		meta(name='theme-color', content='var(--bg-primary')
@@ -63,7 +63,7 @@ html(lang="ru")
 				}
 				w['MangoObject'] = o;
 				w[o] = w[o] || function () {
-					(w[o].q = w[o].q || []).push(arguments)
+					(w[o].q=w[o].q || [] arguments)
 				};
 				w[o].u = u;
 				w[o].t = 1 * new Date();
@@ -80,7 +80,7 @@ html(lang="ru")
 
 		script.
 			(function(m,e,t,r,i,k,a){m[i]=m[i] || function () {
-				(m[i].a = m[i].a || []).push(arguments)
+				(m[i].a=m[i].a || [] arguments)
 			};
 				m[i].l=1 * new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
 			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
@@ -95,10 +95,12 @@ html(lang="ru")
 
 
 	block variables
+	style.
+		.loaded_hiding {  opacity: 0; pointer-events: none;  } .loaded_hiding::before { display: none; }
 	body.loaded_hiding(class= mainPage)
 		noscript
 			div
-				img(src="https://mc.yandex.ru/watch/69502081" style="position:absolute; left:-9999px;" alt="")
+				img(src="https://mc.yandex.ru/watch/69502081" alt="" style="position:absolute; left:-9999px;")
 		noscript
 			iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-5S3NCVQ" height="0" width="0" style="display:none;visibility:hidden")
 

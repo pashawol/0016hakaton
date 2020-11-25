@@ -13,8 +13,8 @@
 							background-image: url(../img/@2x/material.png);
 						}
 						background-image: url(../img/@1x/material.png);
-					bottom: rem(-450);
-					left: rem(-400);
+					bottom: rem(-650);
+					left: rem(-300);
 					position: absolute;
 					width: rem(2048px);
 					height: rem(1075px);
@@ -91,6 +91,8 @@
 		right: rem(-100);
 		left: rem(-100);
 		min-width: calc(100% + #{rem(200)});
+		bottom: rem(200);
+		margin-bottom: rem(200);
 	}
 	
 	@include media-breakpoint-up(xl) {}
