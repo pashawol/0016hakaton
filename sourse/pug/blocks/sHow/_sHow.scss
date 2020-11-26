@@ -31,20 +31,21 @@
 		@include media-breakpoint-up(md) {
 
 			.row{
-				position: relative; 
+				position: relative;
+				z-index: 2; 
 					&::after {
 						content: '';
 						position: absolute;
-						// z-index: -1;
+						z-index: -1;
 						mix-blend-mode: normal;
 						filter: blur(60px);
 						@include a-cent(y);
 						border-radius: 50%;
 						pointer-events: none;
-							left: -0px;
-							top: -100px;
-							width: rem(150px);
-							height: rem(150px);
+							left: -50px;
+							top: -150px;
+							width: rem(200px);
+							height: rem(200px);
 							background: conic-gradient(from 167.69deg at 50% 50%, #FC4646 0deg, #FFB800 360deg);
 							filter: blur(50px);
 							animation: blinkingText 3.2s infinite;
