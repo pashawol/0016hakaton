@@ -1,6 +1,28 @@
 
 	// start .sPrizes
 	.sPrizes {
+			.text-1 {
+				transform: rotate(3.09deg);
+				margin-bottom: rem(120);
+
+				.marquee-inner {
+					background-color: $warning;
+				}
+			}
+
+		&__leader{
+			display: inline-flex;
+			align-items: center;
+			padding: rem(5) rem(5);
+			margin-bottom: rem(30);
+			font-size: rem(28);
+			font-weight: 500;
+			img{
+				margin-left: rem(10);
+				margin-right: rem(10);
+			}
+			background-color: $primary;
+		}
 		 
 		// .row{
 		// 	max-width: rem(930);
@@ -69,7 +91,8 @@
 			strong{
 				color: $primary;
 				@include rfs(30px);
-				display: inline-block;
+				// display: inline-block;
+				display: block;
 			}
 			/* or 36px */
 

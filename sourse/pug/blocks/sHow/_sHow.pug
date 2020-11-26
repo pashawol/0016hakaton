@@ -1,0 +1,17 @@
+mixin sHow(data)
+	// start sHow
+	+b.SECTION.sHow.section#sHow&attributes(attributes)
+		.container
+			+b.section-title
+				
+				h2 Как все пройдет? 
+				
+			.row
+				mixin item(t,p)
+					+e.col.col-md-4.col-sm-6
+						+e.title= t
+						p!= p
+				+item(`11 декабря `,`команды вступят в&nbsp;чаты  по&nbsp;одной из&nbsp;выбранных задач, а&nbsp;также получат  ее&nbsp;полное описание;`)
+				+item(`12 декабря `,`команды представят свои проектные решения экспертам, а&nbsp;также получат обратную связь и&nbsp;рекомендации по&nbsp;презентации;`)
+				+item(`13 декабря `,`состоится видеоконференция, где будут оглашены итоги конкурса и&nbsp;объявлены победители.`)
+	// end sHow

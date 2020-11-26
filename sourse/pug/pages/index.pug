@@ -12,6 +12,7 @@ include ../blocks/sCases/_sCases.pug
 include ../blocks/sRoadMap/_sRoadMap.pug
 include ../blocks/sPrizes/_sPrizes.pug
 include ../blocks/sWhatDo/_sWhatDo.pug
+include ../blocks/sHow/_sHow.pug
 
 block variables
 	- let  mainPage= null
@@ -26,11 +27,12 @@ block pagecontent
 	+sBecome
 	+sThis
 	//- +sFor
-	+sWhat
-	+sCases
+	//- +sWhat
 	+sRoadMap
+	+sHow
+	+sCases
 	+sPrizes
-	+sWhatDo
+	//- +sWhatDo
 	+sContact()
 	+footer()
 

@@ -2,6 +2,13 @@ mixin sPrizes(data)
 	// start sPrizes
 	+b.SECTION.sPrizes.section#sPrizes&attributes(attributes)
 		.container
+			+e.leader 
+				img(src="img/svg/icon-leader-1.svg", alt="", loading="lazy")
+				img(src="img/svg/icon-leader-2.svg", alt="", loading="lazy")
+				| 12 команд — победителей
+				img(src="img/svg/icon-leader-3.svg", alt="", loading="lazy")
+				img(src="img/svg/icon-leader-4.svg", alt="", loading="lazy")
+				img(src="img/svg/icon-leader-5.svg", alt="", loading="lazy")
 			+b.section-title
 				h2 Возможности получить:
 			.row
@@ -15,6 +22,7 @@ mixin sPrizes(data)
 				.col-xl-6
 					+e.img-wrap
 						+pic('bottle_mockup_02.png')
-						img.res-i(src="img/svg/1500000.svg" loading="lazy", alt="")
+						img.res-i(src="img/svg/1500000.svg", alt="", loading="lazy")
 						+pic('Pullover.png.png') 
+		+marquee.text-1.d-none.d-sm-flex(direction="right")
 	// end sPrizes

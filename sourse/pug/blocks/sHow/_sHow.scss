@@ -1,0 +1,93 @@
+
+	// start .sHow
+	.sHow {
+	position: relative;
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			// z-index: -1;
+			mix-blend-mode: normal;
+			filter: blur(60px);
+			@include a-cent(y);
+			border-radius: 50%;
+			pointer-events: none;
+		}
+		
+		position: relative;
+		
+		&::after {
+			left: 0px;
+			top: 100px;
+			width: rem(150px);
+			height: rem(150px);
+			background: conic-gradient(from 167.69deg at 50% 50%, #FC4646 0deg, #FFB800 360deg);
+			filter: blur(50px);
+			animation: blinkingText 3.2s infinite;
+		}
+		&::before {
+			right: -400px;
+			top: -100px;
+			width: rem(500px);
+			height: rem(500px);
+			background: conic-gradient(from 167.69deg at 50% 50%, #54C8ED 0deg, #0083AD 360deg);
+			filter: blur(50px);
+			animation: blinkingText 3.2s infinite;
+		}
+		@include media-breakpoint-up(md) {
+
+			.row{
+				position: relative;
+				&::before {
+					content: '';
+					position: absolute;
+					
+					top: rem(115);
+					width: calc(70% - 30px);
+					left: rem(30);
+					height: 2px;
+					z-index: -1;
+					background: linear-gradient(93.21deg, #FC9246 0%, #54C8ED 100%);
+					
+				}
+			}
+		}
+			&__col{
+			margin-bottom: rem(50);
+		}
+		&__title{
+			font-size: rem(40);
+			position: relative;
+			font-weight: bold;
+				@include media-breakpoint-up(lg){
+
+					margin-bottom: rem(46);
+				}
+				margin-bottom: rem(30);
+			&::after{
+				content: url(../img/svg/circle-white.svg);
+				display: block;
+				margin-top: rem(23);
+			}
+		
+		}
+		p{
+			@include media-breakpoint-up(lg) {
+
+				font-size: rem(24);
+				max-width: rem(380);
+			}
+			font-weight: 500;
+		}
+		 
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	//
+	@include media-breakpoint-between(md, xl) { }
+	//
+	@include media-breakpoint-only(xl) {}
+	//
+	@include media-breakpoint-down(xl) {}
+} // end.sHow
