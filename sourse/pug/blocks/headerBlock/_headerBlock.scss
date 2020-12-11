@@ -3,6 +3,12 @@
 	position: relative;
 	// padding-top: 0;
 
+	.headerBroadcast {
+		margin-top: 100px;
+		display: flex;
+		justify-content: center;
+	}
+
 	--sPT: 0;
 	.container{
 		 position: relative;
@@ -12,11 +18,11 @@
 		&__text-block {
 			// width: 50%;
 			@include media-breakpoint-up(xl) {
-				
+
 				max-width: rem(650);
 			}
 			@include media-breakpoint-up(lg) {
-				
+
 				// text-align: right;
 					max-width: rem(540);
 				}
@@ -39,10 +45,10 @@
 			z-index: 4;
 		}
 	h1{
-		margin-top: em(-1); 
+		margin-top: em(-1);
 		@include rfs(94.827px);
 		// font-size: 145.827px;
-		line-height: 110.8%; 
+		line-height: 110.8%;
 		letter-spacing: 0.015em;
 		text-transform: uppercase;
 		max-width: em(96);
@@ -59,13 +65,13 @@
 				width: var(--size);
 				height: var(--size);
 				border-radius: 50%;
-				border: 5px solid  ; 
+				border: 5px solid  ;
 				position: relative;
 				margin-left: em(1);
 				margin-right: em(1);
 				z-index: -1;
-				&.border-warning{ 
-					--size: #{em(13.427)}; 
+				&.border-warning{
+					--size: #{em(13.427)};
 					&::before{
 						content: '';
 						--size: #{em(20.427)};
@@ -81,7 +87,7 @@
 				&.border-primary{
 					top: em(-1.4);
 				}
-	
+
 			}
 
 		 	&__img-wrap {
@@ -172,7 +178,7 @@ p{
 	 }
  }
  	.text-1 {
-				
+
 		 .marquee-inner{
 
 			 background: #F2F2F2;
@@ -224,7 +230,7 @@ p{
 				}
 				padding-top: rem(40);
 		 p{
-			  
+
 			 color: #5D6773;
 			 @extend .h4;
 			 line-height: 150%;
@@ -237,12 +243,12 @@ p{
 	 &__btn{
 		 width: 100%;
 		 width: rem(304);
-		 @extend .btn; 
+		 @extend .btn;
 		 display: block;
 		 position: relative;
 		 z-index: 4;
 		 @extend .btn-outline-gradient;
-		 
+
 		//  margin-left: auto;
 		//  margin-right: auto;
 	 }
@@ -295,5 +301,5 @@ p{
 	100% {
 		transform: rotate(360deg);
 	}
-	} 
+	}
 
